@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E1DF332FC4AC0F70FD10525 /* libPods-KuangJia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FF6B74BF10169A07AC3F86 /* libPods-KuangJia.a */; };
 		E62A39C5217EB988005DC986 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C4217EB988005DC986 /* AppDelegate.m */; };
 		E62A39C8217EB988005DC986 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C7217EB988005DC986 /* ViewController.m */; };
 		E62A39CB217EB988005DC986 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62A39C9217EB988005DC986 /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ACE5BB1B7D643188422D76C /* Pods-KuangJia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuangJia.release.xcconfig"; path = "Pods/Target Support Files/Pods-KuangJia/Pods-KuangJia.release.xcconfig"; sourceTree = "<group>"; };
+		25FF6B74BF10169A07AC3F86 /* libPods-KuangJia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KuangJia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		647D507DEEC1A48F35A0EBDE /* Pods-KuangJia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuangJia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KuangJia/Pods-KuangJia.debug.xcconfig"; sourceTree = "<group>"; };
 		E62A39C0217EB988005DC986 /* KuangJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuangJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62A39C3217EB988005DC986 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E62A39C4217EB988005DC986 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E1DF332FC4AC0F70FD10525 /* libPods-KuangJia.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B220EFFE06A120352F065DC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25FF6B74BF10169A07AC3F86 /* libPods-KuangJia.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E62A39B7217EB988005DC986 = {
 			isa = PBXGroup;
 			children = (
 				E62A39C2217EB988005DC986 /* KuangJia */,
 				E62A39C1217EB988005DC986 /* Products */,
+				FBED94C887C4A368FA892AAA /* Pods */,
+				B220EFFE06A120352F065DC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +86,15 @@
 			path = KuangJia;
 			sourceTree = "<group>";
 		};
+		FBED94C887C4A368FA892AAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				647D507DEEC1A48F35A0EBDE /* Pods-KuangJia.debug.xcconfig */,
+				0ACE5BB1B7D643188422D76C /* Pods-KuangJia.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +102,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E62A39D6217EB989005DC986 /* Build configuration list for PBXNativeTarget "KuangJia" */;
 			buildPhases = (
+				8894609477FF0A37D03808CB /* [CP] Check Pods Manifest.lock */,
 				E62A39BC217EB988005DC986 /* Sources */,
 				E62A39BD217EB988005DC986 /* Frameworks */,
 				E62A39BE217EB988005DC986 /* Resources */,
@@ -135,6 +160,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8894609477FF0A37D03808CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KuangJia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E62A39BC217EB988005DC986 /* Sources */ = {
@@ -281,6 +331,7 @@
 		};
 		E62A39D7217EB989005DC986 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 647D507DEEC1A48F35A0EBDE /* Pods-KuangJia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +348,7 @@
 		};
 		E62A39D8217EB989005DC986 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ACE5BB1B7D643188422D76C /* Pods-KuangJia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
