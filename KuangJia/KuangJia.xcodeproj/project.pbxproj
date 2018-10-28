@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		854A7718218588EA0027704C /* JSBWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A7716218588E90027704C /* JSBWebView.m */; };
+		854A771D218588F60027704C /* JSBridgeOpenCameraPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A771A218588F60027704C /* JSBridgeOpenCameraPlugin.m */; };
+		854A771E218588F60027704C /* JSBridgeAlertPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A771B218588F60027704C /* JSBridgeAlertPlugin.m */; };
+		854A7721218589100027704C /* JSBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A7720218589100027704C /* JSBridgeViewController.m */; };
+		854A7723218589A90027704C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 854A7722218589A90027704C /* index.html */; };
 		8E1DF332FC4AC0F70FD10525 /* libPods-KuangJia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FF6B74BF10169A07AC3F86 /* libPods-KuangJia.a */; };
 		E62A39C5217EB988005DC986 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C4217EB988005DC986 /* AppDelegate.m */; };
 		E62A39C8217EB988005DC986 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C7217EB988005DC986 /* ViewController.m */; };
@@ -20,6 +25,16 @@
 		0ACE5BB1B7D643188422D76C /* Pods-KuangJia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuangJia.release.xcconfig"; path = "Pods/Target Support Files/Pods-KuangJia/Pods-KuangJia.release.xcconfig"; sourceTree = "<group>"; };
 		25FF6B74BF10169A07AC3F86 /* libPods-KuangJia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KuangJia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		647D507DEEC1A48F35A0EBDE /* Pods-KuangJia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuangJia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KuangJia/Pods-KuangJia.debug.xcconfig"; sourceTree = "<group>"; };
+		854A7715218588E90027704C /* JSBWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBWebView.h; sourceTree = "<group>"; };
+		854A7716218588E90027704C /* JSBWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBWebView.m; sourceTree = "<group>"; };
+		854A7717218588EA0027704C /* JSBWebViewHandleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBWebViewHandleProtocol.h; sourceTree = "<group>"; };
+		854A7719218588F60027704C /* JSBridgeOpenCameraPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBridgeOpenCameraPlugin.h; sourceTree = "<group>"; };
+		854A771A218588F60027704C /* JSBridgeOpenCameraPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBridgeOpenCameraPlugin.m; sourceTree = "<group>"; };
+		854A771B218588F60027704C /* JSBridgeAlertPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBridgeAlertPlugin.m; sourceTree = "<group>"; };
+		854A771C218588F60027704C /* JSBridgeAlertPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBridgeAlertPlugin.h; sourceTree = "<group>"; };
+		854A771F218589100027704C /* JSBridgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBridgeViewController.h; sourceTree = "<group>"; };
+		854A7720218589100027704C /* JSBridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBridgeViewController.m; sourceTree = "<group>"; };
+		854A7722218589A90027704C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		E62A39C0217EB988005DC986 /* KuangJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuangJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62A39C3217EB988005DC986 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E62A39C4217EB988005DC986 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,6 +59,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		854A7714218588D00027704C /* JSBridge */ = {
+			isa = PBXGroup;
+			children = (
+				854A7722218589A90027704C /* index.html */,
+				854A771C218588F60027704C /* JSBridgeAlertPlugin.h */,
+				854A771B218588F60027704C /* JSBridgeAlertPlugin.m */,
+				854A7719218588F60027704C /* JSBridgeOpenCameraPlugin.h */,
+				854A771A218588F60027704C /* JSBridgeOpenCameraPlugin.m */,
+				854A7715218588E90027704C /* JSBWebView.h */,
+				854A7716218588E90027704C /* JSBWebView.m */,
+				854A7717218588EA0027704C /* JSBWebViewHandleProtocol.h */,
+			);
+			path = JSBridge;
+			sourceTree = "<group>";
+		};
 		B220EFFE06A120352F065DC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,10 +103,13 @@
 		E62A39C2217EB988005DC986 /* KuangJia */ = {
 			isa = PBXGroup;
 			children = (
+				854A7714218588D00027704C /* JSBridge */,
 				E62A39C3217EB988005DC986 /* AppDelegate.h */,
 				E62A39C4217EB988005DC986 /* AppDelegate.m */,
 				E62A39C6217EB988005DC986 /* ViewController.h */,
 				E62A39C7217EB988005DC986 /* ViewController.m */,
+				854A771F218589100027704C /* JSBridgeViewController.h */,
+				854A7720218589100027704C /* JSBridgeViewController.m */,
 				E62A39C9217EB988005DC986 /* Main.storyboard */,
 				E62A39CC217EB989005DC986 /* Assets.xcassets */,
 				E62A39CE217EB989005DC986 /* LaunchScreen.storyboard */,
@@ -154,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E62A39D0217EB989005DC986 /* LaunchScreen.storyboard in Resources */,
+				854A7723218589A90027704C /* index.html in Resources */,
 				E62A39CD217EB989005DC986 /* Assets.xcassets in Resources */,
 				E62A39CB217EB988005DC986 /* Main.storyboard in Resources */,
 			);
@@ -192,8 +226,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E62A39C8217EB988005DC986 /* ViewController.m in Sources */,
+				854A771E218588F60027704C /* JSBridgeAlertPlugin.m in Sources */,
+				854A7721218589100027704C /* JSBridgeViewController.m in Sources */,
 				E62A39D3217EB989005DC986 /* main.m in Sources */,
+				854A771D218588F60027704C /* JSBridgeOpenCameraPlugin.m in Sources */,
 				E62A39C5217EB988005DC986 /* AppDelegate.m in Sources */,
+				854A7718218588EA0027704C /* JSBWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
