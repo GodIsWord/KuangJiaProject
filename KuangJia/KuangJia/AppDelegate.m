@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "KJLoginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    KJLoginViewController *a = [[KJLoginViewController alloc]init];
+    UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:a];
+    UIWindow *window  = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    window.rootViewController = na;
+    self.window = window;
+    [window makeKeyAndVisible];
     return YES;
 }
 

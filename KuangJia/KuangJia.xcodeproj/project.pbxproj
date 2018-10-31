@@ -13,6 +13,18 @@
 		854A7721218589100027704C /* JSBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A7720218589100027704C /* JSBridgeViewController.m */; };
 		854A7723218589A90027704C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 854A7722218589A90027704C /* index.html */; };
 		8E1DF332FC4AC0F70FD10525 /* libPods-KuangJia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FF6B74BF10169A07AC3F86 /* libPods-KuangJia.a */; };
+		CA6B04A9218A6508005AC311 /* KJRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B049E218A6508005AC311 /* KJRegisterView.m */; };
+		CA6B04AA218A6508005AC311 /* KJRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B049F218A6508005AC311 /* KJRegisterViewController.m */; };
+		CA6B04AB218A6508005AC311 /* KJForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04A4218A6508005AC311 /* KJForgetViewController.m */; };
+		CA6B04AC218A6508005AC311 /* KJForgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04A6218A6508005AC311 /* KJForgetView.m */; };
+		CA6B04BC218A6514005AC311 /* KJLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04B0218A6514005AC311 /* KJLoginView.m */; };
+		CA6B04BD218A6514005AC311 /* country.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04B1218A6514005AC311 /* country.plist */; };
+		CA6B04BE218A6514005AC311 /* KJCountryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04B4218A6514005AC311 /* KJCountryTableViewController.m */; };
+		CA6B04BF218A6514005AC311 /* KJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04B5218A6514005AC311 /* KJTextField.m */; };
+		CA6B04C0218A6514005AC311 /* KJLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04B7218A6514005AC311 /* KJLoginViewController.m */; };
+		CA6B04C1218A6514005AC311 /* country@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04B9218A6514005AC311 /* country@2x.png */; };
+		CA6B04C2218A6514005AC311 /* country@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04BA218A6514005AC311 /* country@3x.png */; };
+		CA6B04C3218A6514005AC311 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04BB218A6514005AC311 /* back.png */; };
 		E62A39C5217EB988005DC986 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C4217EB988005DC986 /* AppDelegate.m */; };
 		E62A39C8217EB988005DC986 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C7217EB988005DC986 /* ViewController.m */; };
 		E62A39CB217EB988005DC986 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62A39C9217EB988005DC986 /* Main.storyboard */; };
@@ -35,6 +47,27 @@
 		854A771F218589100027704C /* JSBridgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBridgeViewController.h; sourceTree = "<group>"; };
 		854A7720218589100027704C /* JSBridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBridgeViewController.m; sourceTree = "<group>"; };
 		854A7722218589A90027704C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		CA6B049E218A6508005AC311 /* KJRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJRegisterView.m; sourceTree = "<group>"; };
+		CA6B049F218A6508005AC311 /* KJRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJRegisterViewController.m; sourceTree = "<group>"; };
+		CA6B04A0218A6508005AC311 /* KJRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJRegisterView.h; sourceTree = "<group>"; };
+		CA6B04A1218A6508005AC311 /* KJRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJRegisterViewController.h; sourceTree = "<group>"; };
+		CA6B04A3218A6508005AC311 /* KJForgetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJForgetView.h; sourceTree = "<group>"; };
+		CA6B04A4218A6508005AC311 /* KJForgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJForgetViewController.m; sourceTree = "<group>"; };
+		CA6B04A5218A6508005AC311 /* KJForgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJForgetViewController.h; sourceTree = "<group>"; };
+		CA6B04A6218A6508005AC311 /* KJForgetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJForgetView.m; sourceTree = "<group>"; };
+		CA6B04A7218A6508005AC311 /* XBMacroDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBMacroDefinition.h; sourceTree = "<group>"; };
+		CA6B04AF218A6514005AC311 /* KJCountryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJCountryTableViewController.h; sourceTree = "<group>"; };
+		CA6B04B0218A6514005AC311 /* KJLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJLoginView.m; sourceTree = "<group>"; };
+		CA6B04B1218A6514005AC311 /* country.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = country.plist; sourceTree = "<group>"; };
+		CA6B04B2218A6514005AC311 /* KJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJTextField.h; sourceTree = "<group>"; };
+		CA6B04B3218A6514005AC311 /* KJLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJLoginViewController.h; sourceTree = "<group>"; };
+		CA6B04B4218A6514005AC311 /* KJCountryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJCountryTableViewController.m; sourceTree = "<group>"; };
+		CA6B04B5218A6514005AC311 /* KJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJTextField.m; sourceTree = "<group>"; };
+		CA6B04B6218A6514005AC311 /* KJLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJLoginView.h; sourceTree = "<group>"; };
+		CA6B04B7218A6514005AC311 /* KJLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJLoginViewController.m; sourceTree = "<group>"; };
+		CA6B04B9218A6514005AC311 /* country@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "country@2x.png"; sourceTree = "<group>"; };
+		CA6B04BA218A6514005AC311 /* country@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "country@3x.png"; sourceTree = "<group>"; };
+		CA6B04BB218A6514005AC311 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		E62A39C0217EB988005DC986 /* KuangJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuangJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62A39C3217EB988005DC986 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E62A39C4217EB988005DC986 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +115,70 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CA6B049D218A6508005AC311 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B04A0218A6508005AC311 /* KJRegisterView.h */,
+				CA6B049E218A6508005AC311 /* KJRegisterView.m */,
+				CA6B04A1218A6508005AC311 /* KJRegisterViewController.h */,
+				CA6B049F218A6508005AC311 /* KJRegisterViewController.m */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		CA6B04A2218A6508005AC311 /* Forget */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B04A3218A6508005AC311 /* KJForgetView.h */,
+				CA6B04A6218A6508005AC311 /* KJForgetView.m */,
+				CA6B04A5218A6508005AC311 /* KJForgetViewController.h */,
+				CA6B04A4218A6508005AC311 /* KJForgetViewController.m */,
+			);
+			path = Forget;
+			sourceTree = "<group>";
+		};
+		CA6B04A8218A6508005AC311 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		CA6B04AD218A6514005AC311 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B04B8218A6514005AC311 /* Resource */,
+				CA6B04AE218A6514005AC311 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CA6B04AE218A6514005AC311 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B04B1218A6514005AC311 /* country.plist */,
+				CA6B04B2218A6514005AC311 /* KJTextField.h */,
+				CA6B04B5218A6514005AC311 /* KJTextField.m */,
+				CA6B04B6218A6514005AC311 /* KJLoginView.h */,
+				CA6B04B0218A6514005AC311 /* KJLoginView.m */,
+				CA6B04B3218A6514005AC311 /* KJLoginViewController.h */,
+				CA6B04B7218A6514005AC311 /* KJLoginViewController.m */,
+				CA6B04AF218A6514005AC311 /* KJCountryTableViewController.h */,
+				CA6B04B4218A6514005AC311 /* KJCountryTableViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA6B04B8218A6514005AC311 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B04B9218A6514005AC311 /* country@2x.png */,
+				CA6B04BA218A6514005AC311 /* country@3x.png */,
+				CA6B04BB218A6514005AC311 /* back.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		E62A39B7217EB988005DC986 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +200,11 @@
 		E62A39C2217EB988005DC986 /* KuangJia */ = {
 			isa = PBXGroup;
 			children = (
+				CA6B04AD218A6514005AC311 /* Login */,
+				CA6B04A2218A6508005AC311 /* Forget */,
+				CA6B049D218A6508005AC311 /* Register */,
+				CA6B04A8218A6508005AC311 /* Resource */,
+				CA6B04A7218A6508005AC311 /* XBMacroDefinition.h */,
 				854A7714218588D00027704C /* JSBridge */,
 				E62A39C3217EB988005DC986 /* AppDelegate.h */,
 				E62A39C4217EB988005DC986 /* AppDelegate.m */,
@@ -186,9 +288,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6B04BD218A6514005AC311 /* country.plist in Resources */,
+				CA6B04C1218A6514005AC311 /* country@2x.png in Resources */,
 				E62A39D0217EB989005DC986 /* LaunchScreen.storyboard in Resources */,
 				854A7723218589A90027704C /* index.html in Resources */,
+				CA6B04C3218A6514005AC311 /* back.png in Resources */,
 				E62A39CD217EB989005DC986 /* Assets.xcassets in Resources */,
+				CA6B04C2218A6514005AC311 /* country@3x.png in Resources */,
 				E62A39CB217EB988005DC986 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,15 +307,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-KuangJia-checkManifestLockResult.txt",
 			);
@@ -225,12 +327,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6B04A9218A6508005AC311 /* KJRegisterView.m in Sources */,
+				CA6B04BC218A6514005AC311 /* KJLoginView.m in Sources */,
+				CA6B04AC218A6508005AC311 /* KJForgetView.m in Sources */,
 				E62A39C8217EB988005DC986 /* ViewController.m in Sources */,
+				CA6B04AB218A6508005AC311 /* KJForgetViewController.m in Sources */,
+				CA6B04C0218A6514005AC311 /* KJLoginViewController.m in Sources */,
 				854A771E218588F60027704C /* JSBridgeAlertPlugin.m in Sources */,
 				854A7721218589100027704C /* JSBridgeViewController.m in Sources */,
 				E62A39D3217EB989005DC986 /* main.m in Sources */,
+				CA6B04BF218A6514005AC311 /* KJTextField.m in Sources */,
 				854A771D218588F60027704C /* JSBridgeOpenCameraPlugin.m in Sources */,
 				E62A39C5217EB988005DC986 /* AppDelegate.m in Sources */,
+				CA6B04BE218A6514005AC311 /* KJCountryTableViewController.m in Sources */,
+				CA6B04AA218A6508005AC311 /* KJRegisterViewController.m in Sources */,
 				854A7718218588EA0027704C /* JSBWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
