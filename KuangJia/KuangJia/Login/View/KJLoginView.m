@@ -253,8 +253,8 @@
     [moreBtn addTarget:self action:@selector(moreButtonDidClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.subView addSubview:moreBtn];
     [moreBtn  mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.subView.mas_bottom).offset(-40-BOTTOM_MARGIN);
-        make.left.equalTo(self.subView).offset(40);
+        make.bottom.equalTo(self.subView.mas_bottom).offset(-20-BOTTOM_MARGIN);
+        make.left.equalTo(self.subView).offset(20);
         make.width.mas_equalTo(44);
         make.height.mas_equalTo(44);
         
