@@ -41,11 +41,11 @@
     
     
     UIButton *backBtn = [[UIButton alloc]init];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"country"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"close"] forState:(UIControlState)UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backBtnDidClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.subView addSubview:backBtn];
     [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.subView).offset(20);        make.width.mas_equalTo(44);
+        make.left.equalTo(self.subView).offset(20);    make.width.mas_equalTo(44);
         make.top.mas_equalTo(STATUSBAR_HEIGHT);
         make.height.mas_equalTo(44);
         
@@ -140,11 +140,15 @@
     
     KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
     UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:country];
-
+    
     [self.na presentViewController:na animated:YES completion:nil];
 }
 -(void)nextButtonDidClicked{
-    NSLog(@"下一步");
+    // 跳验证码
+    //    KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
+    
+    //    [self.na pushViewController:country animated:YES];
+    
     
 }
 

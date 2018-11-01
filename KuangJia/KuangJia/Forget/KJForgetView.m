@@ -40,7 +40,7 @@
     [self addSubview:self.subView];
     
     UIButton *backBtn = [[UIButton alloc]init];
-    [backBtn setBackgroundImage:[UIImage imageNamed:@"country"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"close"] forState:(UIControlState)UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backBtnDidClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.subView addSubview:backBtn];
     [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -138,6 +138,10 @@
 }
 -(void)nextButtonDidClicked{
     NSLog(@"下一步");
+    // 跳验证码
+    //    KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
+    
+    //    [self.na pushViewController:country animated:YES];
     
 }
 
