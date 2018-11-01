@@ -27,6 +27,8 @@
 		CA6B04C3218A6514005AC311 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04BB218A6514005AC311 /* back.png */; };
 		CA6B04C6218A888C005AC311 /* close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04C4218A888B005AC311 /* close@3x.png */; };
 		CA6B04C7218A888C005AC311 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04C5218A888B005AC311 /* close@2x.png */; };
+		CA6B04CA218AD554005AC311 /* KJResultDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04C9218AD553005AC311 /* KJResultDisplayController.m */; };
+		CA6B04E6218BB88E005AC311 /* UIColor+KJHEX.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04E5218BB88E005AC311 /* UIColor+KJHEX.m */; };
 		E62A39C5217EB988005DC986 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C4217EB988005DC986 /* AppDelegate.m */; };
 		E62A39C8217EB988005DC986 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C7217EB988005DC986 /* ViewController.m */; };
 		E62A39CB217EB988005DC986 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62A39C9217EB988005DC986 /* Main.storyboard */; };
@@ -72,6 +74,10 @@
 		CA6B04BB218A6514005AC311 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		CA6B04C4218A888B005AC311 /* close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@3x.png"; sourceTree = "<group>"; };
 		CA6B04C5218A888B005AC311 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		CA6B04C8218AD553005AC311 /* KJResultDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJResultDisplayController.h; sourceTree = "<group>"; };
+		CA6B04C9218AD553005AC311 /* KJResultDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJResultDisplayController.m; sourceTree = "<group>"; };
+		CA6B04E4218BB88E005AC311 /* UIColor+KJHEX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+KJHEX.h"; sourceTree = "<group>"; };
+		CA6B04E5218BB88E005AC311 /* UIColor+KJHEX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KJHEX.m"; sourceTree = "<group>"; };
 		E62A39C0217EB988005DC986 /* KuangJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuangJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62A39C3217EB988005DC986 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E62A39C4217EB988005DC986 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 		CA6B04AD218A6514005AC311 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				CA6B04DB218BB5EB005AC311 /* Tool */,
 				CA6B04B8218A6514005AC311 /* Resource */,
 				CA6B04AE218A6514005AC311 /* View */,
 			);
@@ -161,14 +168,14 @@
 			isa = PBXGroup;
 			children = (
 				CA6B04B1218A6514005AC311 /* country.plist */,
-				CA6B04B2218A6514005AC311 /* KJTextField.h */,
-				CA6B04B5218A6514005AC311 /* KJTextField.m */,
 				CA6B04B6218A6514005AC311 /* KJLoginView.h */,
 				CA6B04B0218A6514005AC311 /* KJLoginView.m */,
 				CA6B04B3218A6514005AC311 /* KJLoginViewController.h */,
 				CA6B04B7218A6514005AC311 /* KJLoginViewController.m */,
 				CA6B04AF218A6514005AC311 /* KJCountryTableViewController.h */,
 				CA6B04B4218A6514005AC311 /* KJCountryTableViewController.m */,
+				CA6B04C8218AD553005AC311 /* KJResultDisplayController.h */,
+				CA6B04C9218AD553005AC311 /* KJResultDisplayController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,6 +190,17 @@
 				CA6B04BB218A6514005AC311 /* back.png */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		CA6B04DB218BB5EB005AC311 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B04B2218A6514005AC311 /* KJTextField.h */,
+				CA6B04B5218A6514005AC311 /* KJTextField.m */,
+				CA6B04E4218BB88E005AC311 /* UIColor+KJHEX.h */,
+				CA6B04E5218BB88E005AC311 /* UIColor+KJHEX.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		E62A39B7217EB988005DC986 = {
@@ -335,11 +353,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6B04E6218BB88E005AC311 /* UIColor+KJHEX.m in Sources */,
 				CA6B04A9218A6508005AC311 /* KJRegisterView.m in Sources */,
 				CA6B04BC218A6514005AC311 /* KJLoginView.m in Sources */,
 				CA6B04AC218A6508005AC311 /* KJForgetView.m in Sources */,
 				E62A39C8217EB988005DC986 /* ViewController.m in Sources */,
 				CA6B04AB218A6508005AC311 /* KJForgetViewController.m in Sources */,
+				CA6B04CA218AD554005AC311 /* KJResultDisplayController.m in Sources */,
 				CA6B04C0218A6514005AC311 /* KJLoginViewController.m in Sources */,
 				854A771E218588F60027704C /* JSBridgeAlertPlugin.m in Sources */,
 				854A7721218589100027704C /* JSBridgeViewController.m in Sources */,

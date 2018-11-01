@@ -10,7 +10,7 @@
 #import "KJTextField.h"
 
 @interface KJForgetView : UIView
-@property (strong, nonatomic) UITextField *mobileTextField;
+@property (strong, nonatomic) KJTextField *mobileTextField;
 @property (strong, nonatomic) UINavigationController *na;
 
 @end

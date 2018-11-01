@@ -138,13 +138,26 @@
         
     }];
     
+    UIView *Vline = [[UIView alloc] init];
+    Vline.backgroundColor = [UIColor colorWithRed:216 / 255.f green:217 / 255.f blue:226 / 255.f alpha:1];
+    
+    [self.subView addSubview:Vline];
+    [Vline mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(countryBtn.mas_right).offset(5);
+        make.centerY.equalTo(countryLabel);
+        make.height.mas_equalTo(20);
+        make.width.mas_equalTo(0.5);
+        
+    }];
+    
     self.mobileTextField = [self creatTextField:@" 请输入手机号码"];
     self.mobileTextField.delegate = self;
-    
+    self.mobileTextField.textColor = [UIColor whiteColor];
+    self.mobileTextField.tintColor = [UIColor whiteColor];
     [self.subView addSubview:self.mobileTextField];
     [self.mobileTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(countryBtn.mas_right).offset(3);
-        make.right.lessThanOrEqualTo(self.subView).offset((edgesRight-5));
+        make.left.equalTo(self.subView.mas_left).offset(110);
+        make.right.equalTo(self.subView).offset((edgesRight-5));
         make.top.equalTo(mobile.mas_bottom);
         make.height.mas_equalTo(49);
         
@@ -177,7 +190,8 @@
     
     self.passwordTextField = [self creatTextField:@"请输入密码"];
     self.passwordTextField.delegate = self;
-    
+    self.passwordTextField.textColor = [UIColor whiteColor];
+    self.passwordTextField.tintColor = [UIColor whiteColor];
     [self.subView addSubview:self.passwordTextField];
     [self.passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.subView).offset(edgesLeft+5);
@@ -291,7 +305,6 @@
     
     [UIView animateWithDuration:duration delay:0 options:options animations:^{
         self.subView.transform = CGAffineTransformIdentity;
-        //            self.loginButton.transform = CGAffineTransformIdentity;
         
     } completion:nil];
 }
@@ -363,9 +376,8 @@
     
     [self.na presentViewController:na animated:YES completion:nil];
 }
--(void)searchCountry:(NSString *)country{
-    self.countryLabel.text = country;
-}
+
+
 -(void)moreButtonDidClicked{
     //创建AlertController对象 preferredStyle可以设置是AlertView样式或者ActionSheet样式
     UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -387,6 +399,10 @@
     //显示
     [self.na presentViewController:alertC animated:YES completion:nil];
     
+}
+#pragma mark -- KJCountryTableViewControllerDelegate
+-(void)searchCountry:(NSString *)country{
+    self.countryLabel.text = country;
 }
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

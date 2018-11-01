@@ -15,9 +15,7 @@
     [super didMoveToWindow];
     
     self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:216 / 255.f green:217 / 255.f blue:226 / 255.f alpha:0.9],NSFontAttributeName:[UIFont systemFontOfSize:16]}];
-    self.tintColor = [UIColor whiteColor];
-    self.textColor = [UIColor whiteColor];
- 
+    self.clearButtonMode = UITextFieldViewModeWhileEditing;
    
 }
 

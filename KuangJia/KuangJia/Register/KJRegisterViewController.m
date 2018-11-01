@@ -28,7 +28,6 @@
     [self.view addSubview:self.headView];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeEdit)];
     [self.headView addGestureRecognizer:tap];
      self.headView.na = self.navigationController;
@@ -37,7 +36,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [self.headView.mobileTextField becomeFirstResponder];
     
@@ -45,12 +43,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.headView endEditing:YES];
-}
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 }
 
 - (BOOL)becomeFirstResponder{
@@ -65,7 +59,5 @@
 - (void)closeEdit {
     [self.view endEditing:YES];
 }
--(void)dealloc{
-    
-}
+
 @end
