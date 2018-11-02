@@ -10,14 +10,14 @@
 
 @interface KJResultDisplayController ()
 
-@property (nonatomic, strong) NSMutableArray *results;
+@property (nonatomic, strong) NSMutableSet *results;
 @end
 
 @implementation KJResultDisplayController
 
-- (NSMutableArray *)results {
+- (NSMutableSet *)results {
     if (_results == nil) {
-        _results = [NSMutableArray arrayWithCapacity:0];
+        _results = [NSMutableSet set];
     }
     
     return _results;
@@ -31,8 +31,12 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     
-    
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 }
 
 #pragma mark - TableViewDelegate
@@ -57,7 +61,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdent];
     }
     
-    NSArray *arr = self.results[indexPath.row];
+    NSArray *arr = [[self.results allObjects] objectAtIndex:indexPath.row];
     cell.textLabel.text = arr[0];
     cell.detailTextLabel.text  = [arr lastObject];
     return cell;
@@ -86,6 +90,7 @@
     //加个多线程，否则数量量大的时候，有明显的卡顿现象
     dispatch_queue_t globalQueue = dispatch_get_global_queue(0, 0);
     dispatch_async(globalQueue, ^{
+        
         if (searchString!=nil && searchString.length>0) {
             
             //遍历需要搜索的所有内容，其中self.dataArray为存放总数据的数组
