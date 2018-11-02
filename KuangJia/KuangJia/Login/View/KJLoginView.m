@@ -128,13 +128,13 @@
     
     UIButton *countryBtn = [[UIButton alloc]init];
     [countryBtn addTarget:self action:@selector(countryBtnDidClicked) forControlEvents:UIControlEventTouchUpInside];
-    [countryBtn setBackgroundImage:[UIImage imageNamed:@"country"] forState:UIControlStateNormal];
+    [countryBtn setImage:[UIImage imageNamed:@"country"] forState:UIControlStateNormal];
     [self.subView addSubview:countryBtn];
     [countryBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(countryLabel.mas_right).offset(3);
-        make.width.mas_equalTo(30);
+        make.width.mas_equalTo(20);
         make.centerY.equalTo(countryLabel);
-        make.height.mas_equalTo(30);
+        make.height.mas_equalTo(18);
         
     }];
     

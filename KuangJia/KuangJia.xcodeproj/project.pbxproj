@@ -22,13 +22,13 @@
 		CA6B04BE218A6514005AC311 /* KJCountryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04B4218A6514005AC311 /* KJCountryTableViewController.m */; };
 		CA6B04BF218A6514005AC311 /* KJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04B5218A6514005AC311 /* KJTextField.m */; };
 		CA6B04C0218A6514005AC311 /* KJLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04B7218A6514005AC311 /* KJLoginViewController.m */; };
-		CA6B04C1218A6514005AC311 /* country@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04B9218A6514005AC311 /* country@2x.png */; };
-		CA6B04C2218A6514005AC311 /* country@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04BA218A6514005AC311 /* country@3x.png */; };
 		CA6B04C3218A6514005AC311 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04BB218A6514005AC311 /* back.png */; };
 		CA6B04C6218A888C005AC311 /* close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04C4218A888B005AC311 /* close@3x.png */; };
 		CA6B04C7218A888C005AC311 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04C5218A888B005AC311 /* close@2x.png */; };
 		CA6B04CA218AD554005AC311 /* KJResultDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04C9218AD553005AC311 /* KJResultDisplayController.m */; };
 		CA6B04E6218BB88E005AC311 /* UIColor+KJHEX.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04E5218BB88E005AC311 /* UIColor+KJHEX.m */; };
+		CA6B04ED218BFFED005AC311 /* country.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04EB218BFFED005AC311 /* country.png */; };
+		CA6B04EE218BFFED005AC311 /* country_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04EC218BFFED005AC311 /* country_gray.png */; };
 		E62A39C5217EB988005DC986 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C4217EB988005DC986 /* AppDelegate.m */; };
 		E62A39C8217EB988005DC986 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C7217EB988005DC986 /* ViewController.m */; };
 		E62A39CB217EB988005DC986 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62A39C9217EB988005DC986 /* Main.storyboard */; };
@@ -95,8 +95,6 @@
 		CA6B04B5218A6514005AC311 /* KJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJTextField.m; sourceTree = "<group>"; };
 		CA6B04B6218A6514005AC311 /* KJLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJLoginView.h; sourceTree = "<group>"; };
 		CA6B04B7218A6514005AC311 /* KJLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJLoginViewController.m; sourceTree = "<group>"; };
-		CA6B04B9218A6514005AC311 /* country@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "country@2x.png"; sourceTree = "<group>"; };
-		CA6B04BA218A6514005AC311 /* country@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "country@3x.png"; sourceTree = "<group>"; };
 		CA6B04BB218A6514005AC311 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		CA6B04C4218A888B005AC311 /* close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@3x.png"; sourceTree = "<group>"; };
 		CA6B04C5218A888B005AC311 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
@@ -104,6 +102,8 @@
 		CA6B04C9218AD553005AC311 /* KJResultDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJResultDisplayController.m; sourceTree = "<group>"; };
 		CA6B04E4218BB88E005AC311 /* UIColor+KJHEX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+KJHEX.h"; sourceTree = "<group>"; };
 		CA6B04E5218BB88E005AC311 /* UIColor+KJHEX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KJHEX.m"; sourceTree = "<group>"; };
+		CA6B04EB218BFFED005AC311 /* country.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = country.png; sourceTree = "<group>"; };
+		CA6B04EC218BFFED005AC311 /* country_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = country_gray.png; sourceTree = "<group>"; };
 		E62A39C0217EB988005DC986 /* KuangJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuangJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62A39C3217EB988005DC986 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E62A39C4217EB988005DC986 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -219,13 +219,6 @@
 			path = Forget;
 			sourceTree = "<group>";
 		};
-		CA6B04A8218A6508005AC311 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
 		CA6B04AD218A6514005AC311 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,8 +250,8 @@
 			children = (
 				CA6B04C5218A888B005AC311 /* close@2x.png */,
 				CA6B04C4218A888B005AC311 /* close@3x.png */,
-				CA6B04B9218A6514005AC311 /* country@2x.png */,
-				CA6B04BA218A6514005AC311 /* country@3x.png */,
+				CA6B04EC218BFFED005AC311 /* country_gray.png */,
+				CA6B04EB218BFFED005AC311 /* country.png */,
 				CA6B04BB218A6514005AC311 /* back.png */,
 			);
 			path = Resource;
@@ -300,7 +293,6 @@
 				CA6B04AD218A6514005AC311 /* Login */,
 				CA6B04A2218A6508005AC311 /* Forget */,
 				CA6B049D218A6508005AC311 /* Register */,
-				CA6B04A8218A6508005AC311 /* Resource */,
 				CA6B04A7218A6508005AC311 /* XBMacroDefinition.h */,
 				854A7714218588D00027704C /* JSBridge */,
 				E62A39C3217EB988005DC986 /* AppDelegate.h */,
@@ -530,7 +522,6 @@
 				CA6B04C6218A888C005AC311 /* close@3x.png in Resources */,
 				E662D279218B3DBF00A6B9E9 /* ydhoto_select_yes@2x.png in Resources */,
 				CA6B04BD218A6514005AC311 /* country.plist in Resources */,
-				CA6B04C1218A6514005AC311 /* country@2x.png in Resources */,
 				E62A39D0217EB989005DC986 /* LaunchScreen.storyboard in Resources */,
 				854A7723218589A90027704C /* index.html in Resources */,
 				E662D278218B3DBF00A6B9E9 /* ydhoto_select_no@2x.png in Resources */,
@@ -538,11 +529,12 @@
 				E662D259218B3DB200A6B9E9 /* CamoraAssets.xcassets in Resources */,
 				CA6B04C7218A888C005AC311 /* close@2x.png in Resources */,
 				CA6B04C3218A6514005AC311 /* back.png in Resources */,
+				CA6B04ED218BFFED005AC311 /* country.png in Resources */,
 				E62A39CD217EB989005DC986 /* Assets.xcassets in Resources */,
 				E662D277218B3DBF00A6B9E9 /* ydhoto_back@2x.png in Resources */,
-				CA6B04C2218A6514005AC311 /* country@3x.png in Resources */,
 				E62A39CB217EB988005DC986 /* Main.storyboard in Resources */,
 				E662D24D218B3D9C00A6B9E9 /* scan_circle@2x.png in Resources */,
+				CA6B04EE218BFFED005AC311 /* country_gray.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
