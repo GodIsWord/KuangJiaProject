@@ -4,7 +4,7 @@
 //
 
 #import "JSBLoginPlugin.h"
-
+#import "KJLoginViewController.h"
 @implementation JSBLoginPlugin
 
 - (nonnull NSString *)handleName {
@@ -12,6 +12,11 @@
 }
 
 - (void)handleWithData:(id)data responseCallback:(ResponseCallback)callback {
-    NSLog(@"%s", __func__);
+    KJLoginViewController *loginViewController = [[KJLoginViewController alloc]init];
+    UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:loginViewController];
+    [self.presentingViewController presentViewController:na animated:YES completion:^{
+        callback(@{@"result":@"ok...."});
+    }];
+    
 }
 @end

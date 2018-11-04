@@ -8,7 +8,7 @@
 @implementation JSBQrCodeScannerPlugin
 
 - (nonnull NSString *)handleName {
-    return @"openCamera";
+    return @"openQrCodeScanner";
 }
 - (void)handleWithData:(id)data responseCallback:(ResponseCallback)callback {
     NSLog(@"%s",__func__);
