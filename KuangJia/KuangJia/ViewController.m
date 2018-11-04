@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "JSBridgeViewController.h"
+#import "HomeSecriteViewController.h"
 @interface ViewController ()
 
 @end
@@ -23,6 +24,13 @@
     if ([segue.identifier isEqualToString:@"webViewControlerDemo"]) {
         JSBridgeViewController *viewControlelr = segue.destinationViewController;
         viewControlelr.filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 1) {
+        HomeSecriteViewController *viewController = [HomeSecriteViewController new];
+        [self.navigationController pushViewController:viewController animated:YES];
     }
 }
 - (void)didReceiveMemoryWarning {
