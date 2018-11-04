@@ -13,7 +13,7 @@
 #import "YDPhotoAlbumNaviViewController.h"
 #import "YDScanerNaviViewController.h"
 
-@interface HomeSecriteViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HomeSecriteViewController ()<UITableViewDelegate,UITableViewDataSource,YDPhotoAlbumViewControllerDelegate>
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,copy) NSArray *dataSource;
 @end
@@ -92,6 +92,7 @@
             //打开相册
             YDPhotoAlbumNaviViewController *controller = [[YDPhotoAlbumNaviViewController alloc] init];
 //            [self.navigationController pushViewController:controller animated:YES];
+            controller.finishDelegate = self;
             [self presentViewController:controller animated:YES completion:nil];
         }
             break;
@@ -109,6 +110,9 @@
 }
 
 
-
+-(void)YDPhotoAlbumViewControllerSelectFinishResult:(NSArray *)resultes
+{
+    NSLog(@"select photo finish");
+}
 
 @end

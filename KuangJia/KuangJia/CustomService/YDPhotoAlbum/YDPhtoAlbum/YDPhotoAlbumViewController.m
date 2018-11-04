@@ -21,6 +21,7 @@
 
 @property(nonatomic,strong) UILabel *bottomLabel;
 
+
 @end
 
 @implementation YDPhotoAlbumViewController
@@ -49,6 +50,40 @@ static NSString *const headerId = @"headerId";
     self.collectionView = collection;
     
     [collection registerClass:YDPhotoAlbumCollectionViewCell.class forCellWithReuseIdentifier:cellId];
+    
+    
+    UIBarButtonItem  *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(finishSelect:)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame= CGRectMake(10, 0, 25, 25);
+    [btn addTarget:self action:@selector(btnClickBack) forControlEvents:UIControlEventTouchUpInside];
+    [btn setImage:[UIImage imageNamed:@"ydhoto_back@2x.png"] forState:UIControlStateNormal];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+-(void)btnClickBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)finishSelect:(UIBarButtonItem*)item
+{
+    if ([item.title isEqualToString:@"取消"]) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        return;
+    }
+    
+    if ([self.finishDelegate respondsToSelector:@selector(YDPhotoAlbumViewControllerSelectFinishResult:)]) {
+        
+        NSMutableArray *array = [NSMutableArray array];
+        for (PHAsset *asset in self.arrSelected) {
+            [YDPhotoAlbumManager fetchHighQualityImageDataWithAsset:asset progress:nil complate:^(NSData *result) {
+                [array addObject:result];
+            }];
+        }
+        [self.finishDelegate YDPhotoAlbumViewControllerSelectFinishResult:array];
+    }
 }
 -(void)initBottomView
 {
@@ -102,10 +137,10 @@ static NSString *const headerId = @"headerId";
     CGFloat scale = [UIScreen mainScreen].scale;
     CGSize cellSize = cell.frame.size;
     CGSize AssetGridThumbnailSize = CGSizeMake(cellSize.width * scale, cellSize.height * scale);
-    
-    [[PHCachingImageManager defaultManager] requestImageForAsset:asset targetSize:AssetGridThumbnailSize contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+
+    [YDPhotoAlbumManager fetchHighQualityImageAsset:asset viewSize:AssetGridThumbnailSize progress:nil complate:^(UIImage *result) {
         cell.imageView.image = result;
-     }];
+    }];
     
     __weak typeof(self) weakSelf = self;
     [cell setSelectBLock:^(BOOL isSelect) {
@@ -117,7 +152,12 @@ static NSString *const headerId = @"headerId";
                 [weakSelf.arrSelected removeObject:obj];
             }
         }
-        weakSelf.bottomLabel.text= [NSString stringWithFormat:@"%lu/8",(unsigned long)weakSelf.arrSelected.count];
+        weakSelf.bottomLabel.text= [NSString stringWithFormat:@"%lu张",(unsigned long)weakSelf.arrSelected.count];
+        if (weakSelf.arrSelected.count >0) {
+            [weakSelf.navigationItem.rightBarButtonItem setTitle:@"完成"];
+        }else{
+            [weakSelf.navigationItem.rightBarButtonItem setTitle:@"取消"];
+        }
     }];
     return cell;
 }
