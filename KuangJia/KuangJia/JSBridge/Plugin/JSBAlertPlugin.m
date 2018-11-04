@@ -6,13 +6,14 @@
 //  Copyright © 2018 pillar. All rights reserved.
 //
 
-#import "JSBridgeAlertPlugin.h"
+#import "JSBAlertPlugin.h"
 
-@implementation JSBridgeAlertPlugin
+@implementation JSBAlertPlugin
 
 - (nonnull NSString *)handleName {
     return @"showSheet";
 }
+
 - (void)handleWithData:(id)data responseCallback:(ResponseCallback)callback {
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"你猜我谈不谈?" message:@"不谈不谈,就不谈!!" preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];

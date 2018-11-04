@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8534BC78218EE4EC00A0EC4E /* JSBLoginPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC6D218EE4EB00A0EC4E /* JSBLoginPlugin.m */; };
+		8534BC79218EE4EC00A0EC4E /* JSBAlertPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC6E218EE4EB00A0EC4E /* JSBAlertPlugin.m */; };
+		8534BC7A218EE4EC00A0EC4E /* JSBContactPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC6F218EE4EB00A0EC4E /* JSBContactPlugin.m */; };
+		8534BC7B218EE4EC00A0EC4E /* JSBAlbumPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC70218EE4EB00A0EC4E /* JSBAlbumPlugin.m */; };
+		8534BC7C218EE4EC00A0EC4E /* JSBOpenCameraPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC74218EE4EC00A0EC4E /* JSBOpenCameraPlugin.m */; };
+		8534BC7D218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC77218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m */; };
 		854A7718218588EA0027704C /* JSBWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A7716218588E90027704C /* JSBWebView.m */; };
-		854A771D218588F60027704C /* JSBridgeOpenCameraPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A771A218588F60027704C /* JSBridgeOpenCameraPlugin.m */; };
-		854A771E218588F60027704C /* JSBridgeAlertPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A771B218588F60027704C /* JSBridgeAlertPlugin.m */; };
 		854A7721218589100027704C /* JSBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A7720218589100027704C /* JSBridgeViewController.m */; };
 		854A7723218589A90027704C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 854A7722218589A90027704C /* index.html */; };
 		8E1DF332FC4AC0F70FD10525 /* libPods-KuangJia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FF6B74BF10169A07AC3F86 /* libPods-KuangJia.a */; };
@@ -67,13 +71,21 @@
 		0ACE5BB1B7D643188422D76C /* Pods-KuangJia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuangJia.release.xcconfig"; path = "Pods/Target Support Files/Pods-KuangJia/Pods-KuangJia.release.xcconfig"; sourceTree = "<group>"; };
 		25FF6B74BF10169A07AC3F86 /* libPods-KuangJia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KuangJia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		647D507DEEC1A48F35A0EBDE /* Pods-KuangJia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuangJia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KuangJia/Pods-KuangJia.debug.xcconfig"; sourceTree = "<group>"; };
+		8534BC6C218EE4EB00A0EC4E /* JSBContactPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBContactPlugin.h; sourceTree = "<group>"; };
+		8534BC6D218EE4EB00A0EC4E /* JSBLoginPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBLoginPlugin.m; sourceTree = "<group>"; };
+		8534BC6E218EE4EB00A0EC4E /* JSBAlertPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBAlertPlugin.m; sourceTree = "<group>"; };
+		8534BC6F218EE4EB00A0EC4E /* JSBContactPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBContactPlugin.m; sourceTree = "<group>"; };
+		8534BC70218EE4EB00A0EC4E /* JSBAlbumPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBAlbumPlugin.m; sourceTree = "<group>"; };
+		8534BC71218EE4EB00A0EC4E /* JSBLoginPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBLoginPlugin.h; sourceTree = "<group>"; };
+		8534BC72218EE4EC00A0EC4E /* JSBAlertPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBAlertPlugin.h; sourceTree = "<group>"; };
+		8534BC73218EE4EC00A0EC4E /* JSBOpenCameraPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBOpenCameraPlugin.h; sourceTree = "<group>"; };
+		8534BC74218EE4EC00A0EC4E /* JSBOpenCameraPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBOpenCameraPlugin.m; sourceTree = "<group>"; };
+		8534BC75218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBQrCodeScannerPlugin.h; sourceTree = "<group>"; };
+		8534BC76218EE4EC00A0EC4E /* JSBAlbumPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBAlbumPlugin.h; sourceTree = "<group>"; };
+		8534BC77218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBQrCodeScannerPlugin.m; sourceTree = "<group>"; };
 		854A7715218588E90027704C /* JSBWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBWebView.h; sourceTree = "<group>"; };
 		854A7716218588E90027704C /* JSBWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBWebView.m; sourceTree = "<group>"; };
 		854A7717218588EA0027704C /* JSBWebViewHandleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBWebViewHandleProtocol.h; sourceTree = "<group>"; };
-		854A7719218588F60027704C /* JSBridgeOpenCameraPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBridgeOpenCameraPlugin.h; sourceTree = "<group>"; };
-		854A771A218588F60027704C /* JSBridgeOpenCameraPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBridgeOpenCameraPlugin.m; sourceTree = "<group>"; };
-		854A771B218588F60027704C /* JSBridgeAlertPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBridgeAlertPlugin.m; sourceTree = "<group>"; };
-		854A771C218588F60027704C /* JSBridgeAlertPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBridgeAlertPlugin.h; sourceTree = "<group>"; };
 		854A771F218589100027704C /* JSBridgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBridgeViewController.h; sourceTree = "<group>"; };
 		854A7720218589100027704C /* JSBridgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBridgeViewController.m; sourceTree = "<group>"; };
 		854A7722218589A90027704C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -174,17 +186,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8534BC6B218EE1FC00A0EC4E /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				8534BC76218EE4EC00A0EC4E /* JSBAlbumPlugin.h */,
+				8534BC70218EE4EB00A0EC4E /* JSBAlbumPlugin.m */,
+				8534BC72218EE4EC00A0EC4E /* JSBAlertPlugin.h */,
+				8534BC6E218EE4EB00A0EC4E /* JSBAlertPlugin.m */,
+				8534BC6C218EE4EB00A0EC4E /* JSBContactPlugin.h */,
+				8534BC6F218EE4EB00A0EC4E /* JSBContactPlugin.m */,
+				8534BC71218EE4EB00A0EC4E /* JSBLoginPlugin.h */,
+				8534BC6D218EE4EB00A0EC4E /* JSBLoginPlugin.m */,
+				8534BC73218EE4EC00A0EC4E /* JSBOpenCameraPlugin.h */,
+				8534BC74218EE4EC00A0EC4E /* JSBOpenCameraPlugin.m */,
+				8534BC75218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.h */,
+				8534BC77218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
 		854A7714218588D00027704C /* JSBridge */ = {
 			isa = PBXGroup;
 			children = (
+				8534BC6B218EE1FC00A0EC4E /* Plugin */,
 				854A7722218589A90027704C /* index.html */,
-				854A771C218588F60027704C /* JSBridgeAlertPlugin.h */,
-				854A771B218588F60027704C /* JSBridgeAlertPlugin.m */,
-				854A7719218588F60027704C /* JSBridgeOpenCameraPlugin.h */,
-				854A771A218588F60027704C /* JSBridgeOpenCameraPlugin.m */,
 				854A7715218588E90027704C /* JSBWebView.h */,
 				854A7716218588E90027704C /* JSBWebView.m */,
 				854A7717218588EA0027704C /* JSBWebViewHandleProtocol.h */,
+				854A771F218589100027704C /* JSBridgeViewController.h */,
+				854A7720218589100027704C /* JSBridgeViewController.m */,
 			);
 			path = JSBridge;
 			sourceTree = "<group>";
@@ -299,8 +329,6 @@
 				E62A39C4217EB988005DC986 /* AppDelegate.m */,
 				E62A39C6217EB988005DC986 /* ViewController.h */,
 				E62A39C7217EB988005DC986 /* ViewController.m */,
-				854A771F218589100027704C /* JSBridgeViewController.h */,
-				854A7720218589100027704C /* JSBridgeViewController.m */,
 				E62A39C9217EB988005DC986 /* Main.storyboard */,
 				E62A39CC217EB989005DC986 /* Assets.xcassets */,
 				E62A39CE217EB989005DC986 /* LaunchScreen.storyboard */,
@@ -567,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6B04E6218BB88E005AC311 /* UIColor+KJHEX.m in Sources */,
+				8534BC7D218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m in Sources */,
 				E662D247218B3D9400A6B9E9 /* UIView+XBFrame.m in Sources */,
 				CA6B04A9218A6508005AC311 /* KJRegisterView.m in Sources */,
 				E662D23B218B3D8C00A6B9E9 /* IMYWebView.m in Sources */,
@@ -575,22 +604,24 @@
 				E662D275218B3DBF00A6B9E9 /* YDPhotoGroupTableViewCell.m in Sources */,
 				E662D246218B3D9400A6B9E9 /* UIColor+ARCatalog.m in Sources */,
 				E62A39C8217EB988005DC986 /* ViewController.m in Sources */,
+				8534BC79218EE4EC00A0EC4E /* JSBAlertPlugin.m in Sources */,
 				CA6B04AB218A6508005AC311 /* KJForgetViewController.m in Sources */,
 				CA6B04CA218AD554005AC311 /* KJResultDisplayController.m in Sources */,
 				CA6B04C0218A6514005AC311 /* KJLoginViewController.m in Sources */,
 				E662D25C218B3DB200A6B9E9 /* YDWeakProxy.m in Sources */,
-				854A771E218588F60027704C /* JSBridgeAlertPlugin.m in Sources */,
 				854A7721218589100027704C /* JSBridgeViewController.m in Sources */,
 				E62A39D3217EB989005DC986 /* main.m in Sources */,
 				E662D27C218B3DBF00A6B9E9 /* YDPhotoAlbumNaviViewController.m in Sources */,
 				E662D248218B3D9400A6B9E9 /* XBWeakProxy.m in Sources */,
+				8534BC7B218EE4EC00A0EC4E /* JSBAlbumPlugin.m in Sources */,
 				E662D25B218B3DB200A6B9E9 /* YDLoacationManager.m in Sources */,
+				8534BC7C218EE4EC00A0EC4E /* JSBOpenCameraPlugin.m in Sources */,
 				E662D27B218B3DBF00A6B9E9 /* YDPhotoAlbumViewController.m in Sources */,
 				CA6B04BF218A6514005AC311 /* KJTextField.m in Sources */,
-				854A771D218588F60027704C /* JSBridgeOpenCameraPlugin.m in Sources */,
 				E662D230218B3D8400A6B9E9 /* YDScanerViewController.m in Sources */,
 				E662D23C218B3D8C00A6B9E9 /* WYWeakScriptMessageDelegate.m in Sources */,
 				E662D27A218B3DBF00A6B9E9 /* YDPhotoAlbumCollectionViewCell.m in Sources */,
+				8534BC7A218EE4EC00A0EC4E /* JSBContactPlugin.m in Sources */,
 				E662D276218B3DBF00A6B9E9 /* YDPhotoGroupViewController.m in Sources */,
 				E662D23A218B3D8C00A6B9E9 /* IMY_NJKWebViewProgress.m in Sources */,
 				E62A39C5217EB988005DC986 /* AppDelegate.m in Sources */,
@@ -599,6 +630,7 @@
 				E662D273218B3DBF00A6B9E9 /* YDPhotoAlbumManager.m in Sources */,
 				E662D23D218B3D8C00A6B9E9 /* YDScanWebViewController.m in Sources */,
 				E662D274218B3DBF00A6B9E9 /* YDPhotoGroupModel.m in Sources */,
+				8534BC78218EE4EC00A0EC4E /* JSBLoginPlugin.m in Sources */,
 				E662D22F218B3D8400A6B9E9 /* YDScanerNaviViewController.m in Sources */,
 				CA6B04AA218A6508005AC311 /* KJRegisterViewController.m in Sources */,
 				854A7718218588EA0027704C /* JSBWebView.m in Sources */,

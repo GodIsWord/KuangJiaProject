@@ -6,6 +6,6 @@
 #import <UIKit/UIKit.h>
 #import "JSBWebViewHandleProtocol.h"
 
-@interface JSBridgeOpenCameraPlugin : NSObject <JSBWebViewHandleProtocol>
+@interface JSBLoginPlugin : NSObject <JSBWebViewHandleProtocol>
 @property (nonatomic, weak) UIViewController *presentingViewController;
 @end

@@ -8,8 +8,8 @@
 
 #import "JSBridgeViewController.h"
 #import "JSBWebView.h"
-#import "JSBridgeAlertPlugin.h"
-#import "JSBridgeOpenCameraPlugin.h"
+#import "JSBAlertPlugin.h"
+#import "JSBOpenCameraPlugin.h"
 @interface JSBridgeViewController ()
 @property (nonatomic, strong) JSBWebView *webView;
 @end
