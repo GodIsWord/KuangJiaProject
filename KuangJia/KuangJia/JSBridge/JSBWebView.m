@@ -229,7 +229,6 @@
 #pragma mark - Dealloc
 
 - (void)dealloc {
-
     [self.realView removeObserver:self forKeyPath:@"estimatedProgress"];
     [self.realView removeObserver:self forKeyPath:@"title"];
     [self.realView removeObserver:self forKeyPath:@"loading"];
@@ -238,7 +237,6 @@
     [self.realView stopLoading];
     [self.realView removeFromSuperview];
     self.realView = nil;
-    NSLog(@"%@ dealloc ", self);
 }
 
 @end

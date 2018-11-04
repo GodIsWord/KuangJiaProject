@@ -4,8 +4,8 @@
 //
 
 #import "JSBAlbumPlugin.h"
-
-@interface JSBAlbumPlugin()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+#import "YDPhotoAlbumNaviViewController.h"
+@interface JSBAlbumPlugin() <YDPhotoAlbumViewControllerDelegate>
 @property (nonatomic, copy) ResponseCallback callback;
 @end
 
@@ -20,24 +20,14 @@
     NSLog(@"%s", __func__);
     // 保存回调
     self.callback = callback;
-    UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
-    pickerController.delegate = self;
-    pickerController.allowsEditing = YES;
-    pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [self.presentingViewController presentViewController:pickerController animated:YES completion:nil];
+    YDPhotoAlbumNaviViewController *controller = [[YDPhotoAlbumNaviViewController alloc] init];
+    controller.finishDelegate = self;
+    [self.presentingViewController presentViewController:controller animated:YES completion:nil];
+
 }
 
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    //image 是 iOS 特有的类
-    // 如果要传给H5使用，请转换成NSData
-    NSData *data = UIImageJPEGRepresentation(image, 0.7);
-    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    self.callback(@{@"image":encodedImageStr});
+-(void)YDPhotoAlbumViewControllerSelectFinishResult:(NSArray *)resultes
+{
+   self.callback(@{@"images":resultes.description});
 }
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
-
 @end

@@ -4,6 +4,7 @@
 //
 
 #import "JSBQrCodeScannerPlugin.h"
+#import "YDScanerNaviViewController.h"
 
 @implementation JSBQrCodeScannerPlugin
 
@@ -11,6 +12,7 @@
     return @"openQrCodeScanner";
 }
 - (void)handleWithData:(id)data responseCallback:(ResponseCallback)callback {
-    NSLog(@"%s",__func__);
+    YDScanerNaviViewController *navi = [[YDScanerNaviViewController alloc] init];
+    [self.presentingViewController presentViewController:navi animated:YES completion:nil];
 }
 @end
