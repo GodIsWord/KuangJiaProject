@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.dataSource = @[@"通讯录",@"短信获取",@"短信发送",@"通话记录",@"拨打电话",@"调用相机",@"打开相册",@"二维码 条形码扫描"];
+    self.dataSource = @[@"通讯录",@"短信发送",@"拨打电话",@"调用相机",@"打开相册",@"二维码 条形码扫描"];
     [self createTableView];
 }
 
@@ -57,11 +57,6 @@
             break;
         case 1:
         {
-            //获取短信
-        }
-            break;
-        case 2:
-        {
             //发送短信
             [YDSecritManger sendMessageWithNum:@[@"100086"] message:@"test" viewController:self complation:^(YDSecritMangerMessageResult result) {
 
@@ -69,25 +64,20 @@
 
         }
             break;
-        case 3:
-        {
-            
-        }
-            break;
-        case 4:
+        case 2:
         {
             //拨打电话
-            [YDSecritManger callPhoneWithNum:@"10086"];
+            [YDSecritManger callPhoneWithNum:@"10010"];
         }
             break;
-        case 5:
+        case 3:
         {
             //打开相机
             YDCamoraViewController *camora = [[YDCamoraViewController alloc] init];
             [self presentViewController:camora animated:YES completion:nil];
         }
             break;
-        case 6:
+        case 4:
         {
             //打开相册
             YDPhotoAlbumNaviViewController *controller = [[YDPhotoAlbumNaviViewController alloc] init];
@@ -96,7 +86,7 @@
             [self presentViewController:controller animated:YES completion:nil];
         }
             break;
-        case 7:
+        case 5:
         {
             //二维码扫描 条形码也可以
             YDScanerNaviViewController *navi = [[YDScanerNaviViewController alloc] init];
