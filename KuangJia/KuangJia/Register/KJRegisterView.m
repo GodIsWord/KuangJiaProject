@@ -173,8 +173,8 @@
 }
 -(void)nextButtonDidClicked{
     // 跳验证码
-    //    KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
-    //    [self.na pushViewController:country animated:YES];
+        KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
+        [self.na pushViewController:country animated:YES];
     
 }
 #pragma mark -- KJCountryTableViewControllerDelegate

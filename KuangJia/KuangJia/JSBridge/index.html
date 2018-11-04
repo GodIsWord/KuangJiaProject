@@ -10,8 +10,11 @@
 
             button{
                 border:0;
-                width: 150px;
-                height: 35px;
+                margin:10px;
+                padding-top:4px;
+                padding-bottom:4px;
+                padding-right:20px;
+                padding-left:20px;
                 background-color: orangered;
                 color: white;
                 font-size: 16px;
@@ -22,8 +25,11 @@
     
     <body>
         <h2>JS调用OC中的方法</h2>
-        <button id="btn">访问OC相册</button>
-        <button id="btn1">调用OC提示窗</button>
+        <button id="btn">相册</button>
+        <button id="btn1">相机</button>
+        <button id="btn2">二维码扫描</button>
+        <button id="btn3">通讯录</button>
+        <button id="btn4">登陆</button>
         <p></p>
     </body>
     <script>
@@ -48,7 +54,7 @@
            bridge.registerHandler('getUserInfo', function(data, responseCallback) {
                console.log("OC中传递过来的参数:", data);
                // 把处理好的结果返回给OC
-               responseCallback({"userID":"DX001", "userName":"旋之华", "age":"18", "otherName":"旋之华"})
+               responseCallback({"userID":"11", "userName":"xx", "age":"18", "otherName":"啊哈啊"})
            });
 
            //  弹框输出
@@ -56,7 +62,7 @@
                alert(data);
            });
 
-           //  动态跳转到京东商城
+           //  跳转
            bridge.registerHandler('pushToNewWebSite', function(data, responseCallback) {
                window.location.href = data.url;
            });
@@ -73,16 +79,30 @@
 
            /* OC给JS提供公开的API, 在JS中可以手动调用此API, 并且可以接收OC中传过来的参数,同时可回调OC */
                                     
-           // 调用OC中的打开相册方法
+
            document.getElementById('btn').onclick = function () {
-               bridge.callHandler('openCamera', {'count':'10张'}, function responseCallback(responseData) {
+               bridge.callHandler('openAlbum', '', function responseCallback(responseData) {
                    console.log("OC中返回的参数:", responseData)
                });
            };
-
            document.getElementById('btn1').onclick = function () {
-               bridge.callHandler('showSheet', '', function responseCallback(responseData) {
-                   console.log("-------- OC中返回的参数:", responseData)
+               bridge.callHandler('openCamera', {"type":"camera"}, function responseCallback(responseData) {
+                   console.log("OC中返回的参数:", responseData)
+               });
+           };
+           document.getElementById('btn2').onclick = function () {
+               bridge.callHandler('openQrCodeScanner', '', function responseCallback(responseData) {
+                   console.log("OC中返回的参数:", responseData)
+               });
+           };
+           document.getElementById('btn3').onclick = function () {
+               bridge.callHandler('openContact', '', function responseCallback(responseData) {
+                   console.log("OC中返回的参数:", responseData)
+               });
+           };
+           document.getElementById('btn4').onclick = function () {
+               bridge.callHandler('openLogin', '', function responseCallback(responseData) {
+                   console.log("OC中返回的参数:", responseData)
                });
            };
        })

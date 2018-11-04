@@ -35,10 +35,7 @@
     self = [super initWithFrame:[UIScreen mainScreen].bounds];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        
         self.subView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        //        self.subView.backgroundColor = [[UIColor clearColor] colorWithAlphaComponent:0.3];
-        
         self.subView.userInteractionEnabled = YES;
         UIImage *image = [UIImage imageNamed:@"back"];
         self.layer.contents = (id) image.CGImage;
@@ -358,23 +355,24 @@
 -(void)forgetButtonDidClicked{
     KJForgetViewController *forget = [[KJForgetViewController alloc]init];
     UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:forget];
-    [self.na presentViewController:na animated:YES completion:nil];
+    [self.viewController presentViewController:na animated:YES completion:nil];
     
 }
 -(void)registButtonDidClicked{
     
     KJRegisterViewController *regist = [[KJRegisterViewController alloc]init];
     UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:regist];
-    [self.na presentViewController:na animated:YES completion:nil];
+    [self.viewController presentViewController:na animated:YES completion:nil];
     
 }
 -(void)countryBtnDidClicked{
     
     KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
+#warning 小白想想这里，view层处理了业务逻辑。。 这种设计模式对不对？
     country.delegate = self;
+
     UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:country];
-    
-    [self.na presentViewController:na animated:YES completion:nil];
+    [self.viewController presentViewController:na animated:YES completion:nil];
 }
 
 
@@ -390,7 +388,7 @@
         
     }];
     UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
+        [self.viewController dismissViewControllerAnimated:YES completion:nil];
     }];
     //添加按钮
     [alertC addAction:action1];
@@ -400,6 +398,15 @@
     [self.na presentViewController:alertC animated:YES completion:nil];
     
 }
+
+- (UIViewController *)viewController {
+    id responder = self.nextResponder;
+    while (![responder isKindOfClass:[UIViewController class]]) {
+        responder = [responder nextResponder];
+    }
+    return (UIViewController *)responder;
+}
+
 #pragma mark -- KJCountryTableViewControllerDelegate
 -(void)searchCountry:(NSString *)country{
     self.countryLabel.text = country;

@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSBridgeViewController : UIViewController
-
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *filePath;
 @end
 
 NS_ASSUME_NONNULL_END
