@@ -61,6 +61,13 @@
 		E662D27A218B3DBF00A6B9E9 /* YDPhotoAlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D26D218B3DBF00A6B9E9 /* YDPhotoAlbumCollectionViewCell.m */; };
 		E662D27B218B3DBF00A6B9E9 /* YDPhotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D26F218B3DBF00A6B9E9 /* YDPhotoAlbumViewController.m */; };
 		E662D27C218B3DBF00A6B9E9 /* YDPhotoAlbumNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D272218B3DBF00A6B9E9 /* YDPhotoAlbumNaviViewController.m */; };
+		E662D2C2218EDBCB00A6B9E9 /* HomeSecriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2C1218EDBCB00A6B9E9 /* HomeSecriteViewController.m */; };
+		E662D2C5218EDD3400A6B9E9 /* YDSecritManger.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2C4218EDD3400A6B9E9 /* YDSecritManger.m */; };
+		E662D2D4218EE2C000A6B9E9 /* LJContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2CB218EE2C000A6B9E9 /* LJContactManager.m */; };
+		E662D2D5218EE2C000A6B9E9 /* LJPeoplePickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2CD218EE2C000A6B9E9 /* LJPeoplePickerDelegate.m */; };
+		E662D2D6218EE2C000A6B9E9 /* LJPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2CF218EE2C000A6B9E9 /* LJPerson.m */; };
+		E662D2D7218EE2C000A6B9E9 /* LJPickerDetailDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2D1218EE2C000A6B9E9 /* LJPickerDetailDelegate.m */; };
+		E662D2D8218EE2C000A6B9E9 /* NSString+LJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2D3218EE2C000A6B9E9 /* NSString+LJExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +167,20 @@
 		E662D26F218B3DBF00A6B9E9 /* YDPhotoAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDPhotoAlbumViewController.m; sourceTree = "<group>"; };
 		E662D271218B3DBF00A6B9E9 /* YDPhotoAlbumNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDPhotoAlbumNaviViewController.h; sourceTree = "<group>"; };
 		E662D272218B3DBF00A6B9E9 /* YDPhotoAlbumNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDPhotoAlbumNaviViewController.m; sourceTree = "<group>"; };
+		E662D2C0218EDBCB00A6B9E9 /* HomeSecriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSecriteViewController.h; sourceTree = "<group>"; };
+		E662D2C1218EDBCB00A6B9E9 /* HomeSecriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSecriteViewController.m; sourceTree = "<group>"; };
+		E662D2C3218EDD3400A6B9E9 /* YDSecritManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDSecritManger.h; sourceTree = "<group>"; };
+		E662D2C4218EDD3400A6B9E9 /* YDSecritManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDSecritManger.m; sourceTree = "<group>"; };
+		E662D2CA218EE2C000A6B9E9 /* LJContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJContactManager.h; sourceTree = "<group>"; };
+		E662D2CB218EE2C000A6B9E9 /* LJContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJContactManager.m; sourceTree = "<group>"; };
+		E662D2CC218EE2C000A6B9E9 /* LJPeoplePickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJPeoplePickerDelegate.h; sourceTree = "<group>"; };
+		E662D2CD218EE2C000A6B9E9 /* LJPeoplePickerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJPeoplePickerDelegate.m; sourceTree = "<group>"; };
+		E662D2CE218EE2C000A6B9E9 /* LJPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJPerson.h; sourceTree = "<group>"; };
+		E662D2CF218EE2C000A6B9E9 /* LJPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJPerson.m; sourceTree = "<group>"; };
+		E662D2D0218EE2C000A6B9E9 /* LJPickerDetailDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJPickerDetailDelegate.h; sourceTree = "<group>"; };
+		E662D2D1218EE2C000A6B9E9 /* LJPickerDetailDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJPickerDetailDelegate.m; sourceTree = "<group>"; };
+		E662D2D2218EE2C000A6B9E9 /* NSString+LJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LJExtension.h"; sourceTree = "<group>"; };
+		E662D2D3218EE2C000A6B9E9 /* NSString+LJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LJExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +310,8 @@
 		E62A39C2217EB988005DC986 /* KuangJia */ = {
 			isa = PBXGroup;
 			children = (
+				E662D2C9218EE2C000A6B9E9 /* LJContactManager */,
+				E662D2BF218EDA8E00A6B9E9 /* SecritTest */,
 				E662D229218B3D3C00A6B9E9 /* CustomService */,
 				CA6B04AD218A6514005AC311 /* Login */,
 				CA6B04A2218A6508005AC311 /* Forget */,
@@ -297,6 +320,8 @@
 				854A7714218588D00027704C /* JSBridge */,
 				E62A39C3217EB988005DC986 /* AppDelegate.h */,
 				E62A39C4217EB988005DC986 /* AppDelegate.m */,
+				E662D2C0218EDBCB00A6B9E9 /* HomeSecriteViewController.h */,
+				E662D2C1218EDBCB00A6B9E9 /* HomeSecriteViewController.m */,
 				E62A39C6217EB988005DC986 /* ViewController.h */,
 				E62A39C7217EB988005DC986 /* ViewController.m */,
 				854A771F218589100027704C /* JSBridgeViewController.h */,
@@ -451,6 +476,32 @@
 			path = YDPotoNavigation;
 			sourceTree = "<group>";
 		};
+		E662D2BF218EDA8E00A6B9E9 /* SecritTest */ = {
+			isa = PBXGroup;
+			children = (
+				E662D2C3218EDD3400A6B9E9 /* YDSecritManger.h */,
+				E662D2C4218EDD3400A6B9E9 /* YDSecritManger.m */,
+			);
+			path = SecritTest;
+			sourceTree = "<group>";
+		};
+		E662D2C9218EE2C000A6B9E9 /* LJContactManager */ = {
+			isa = PBXGroup;
+			children = (
+				E662D2CA218EE2C000A6B9E9 /* LJContactManager.h */,
+				E662D2CB218EE2C000A6B9E9 /* LJContactManager.m */,
+				E662D2CC218EE2C000A6B9E9 /* LJPeoplePickerDelegate.h */,
+				E662D2CD218EE2C000A6B9E9 /* LJPeoplePickerDelegate.m */,
+				E662D2CE218EE2C000A6B9E9 /* LJPerson.h */,
+				E662D2CF218EE2C000A6B9E9 /* LJPerson.m */,
+				E662D2D0218EE2C000A6B9E9 /* LJPickerDetailDelegate.h */,
+				E662D2D1218EE2C000A6B9E9 /* LJPickerDetailDelegate.m */,
+				E662D2D2218EE2C000A6B9E9 /* NSString+LJExtension.h */,
+				E662D2D3218EE2C000A6B9E9 /* NSString+LJExtension.m */,
+			);
+			path = LJContactManager;
+			sourceTree = "<group>";
+		};
 		FBED94C887C4A368FA892AAA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,12 +617,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E662D2C2218EDBCB00A6B9E9 /* HomeSecriteViewController.m in Sources */,
 				CA6B04E6218BB88E005AC311 /* UIColor+KJHEX.m in Sources */,
 				E662D247218B3D9400A6B9E9 /* UIView+XBFrame.m in Sources */,
 				CA6B04A9218A6508005AC311 /* KJRegisterView.m in Sources */,
 				E662D23B218B3D8C00A6B9E9 /* IMYWebView.m in Sources */,
 				CA6B04BC218A6514005AC311 /* KJLoginView.m in Sources */,
 				CA6B04AC218A6508005AC311 /* KJForgetView.m in Sources */,
+				E662D2D8218EE2C000A6B9E9 /* NSString+LJExtension.m in Sources */,
 				E662D275218B3DBF00A6B9E9 /* YDPhotoGroupTableViewCell.m in Sources */,
 				E662D246218B3D9400A6B9E9 /* UIColor+ARCatalog.m in Sources */,
 				E62A39C8217EB988005DC986 /* ViewController.m in Sources */,
@@ -579,17 +632,21 @@
 				CA6B04CA218AD554005AC311 /* KJResultDisplayController.m in Sources */,
 				CA6B04C0218A6514005AC311 /* KJLoginViewController.m in Sources */,
 				E662D25C218B3DB200A6B9E9 /* YDWeakProxy.m in Sources */,
+				E662D2D6218EE2C000A6B9E9 /* LJPerson.m in Sources */,
 				854A771E218588F60027704C /* JSBridgeAlertPlugin.m in Sources */,
 				854A7721218589100027704C /* JSBridgeViewController.m in Sources */,
 				E62A39D3217EB989005DC986 /* main.m in Sources */,
 				E662D27C218B3DBF00A6B9E9 /* YDPhotoAlbumNaviViewController.m in Sources */,
 				E662D248218B3D9400A6B9E9 /* XBWeakProxy.m in Sources */,
 				E662D25B218B3DB200A6B9E9 /* YDLoacationManager.m in Sources */,
+				E662D2C5218EDD3400A6B9E9 /* YDSecritManger.m in Sources */,
 				E662D27B218B3DBF00A6B9E9 /* YDPhotoAlbumViewController.m in Sources */,
 				CA6B04BF218A6514005AC311 /* KJTextField.m in Sources */,
 				854A771D218588F60027704C /* JSBridgeOpenCameraPlugin.m in Sources */,
 				E662D230218B3D8400A6B9E9 /* YDScanerViewController.m in Sources */,
 				E662D23C218B3D8C00A6B9E9 /* WYWeakScriptMessageDelegate.m in Sources */,
+				E662D2D4218EE2C000A6B9E9 /* LJContactManager.m in Sources */,
+				E662D2D5218EE2C000A6B9E9 /* LJPeoplePickerDelegate.m in Sources */,
 				E662D27A218B3DBF00A6B9E9 /* YDPhotoAlbumCollectionViewCell.m in Sources */,
 				E662D276218B3DBF00A6B9E9 /* YDPhotoGroupViewController.m in Sources */,
 				E662D23A218B3D8C00A6B9E9 /* IMY_NJKWebViewProgress.m in Sources */,
@@ -600,6 +657,7 @@
 				E662D23D218B3D8C00A6B9E9 /* YDScanWebViewController.m in Sources */,
 				E662D274218B3DBF00A6B9E9 /* YDPhotoGroupModel.m in Sources */,
 				E662D22F218B3D8400A6B9E9 /* YDScanerNaviViewController.m in Sources */,
+				E662D2D7218EE2C000A6B9E9 /* LJPickerDetailDelegate.m in Sources */,
 				CA6B04AA218A6508005AC311 /* KJRegisterViewController.m in Sources */,
 				854A7718218588EA0027704C /* JSBWebView.m in Sources */,
 			);
@@ -743,7 +801,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S734R9XHYJ;
 				INFOPLIST_FILE = KuangJia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -760,7 +820,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S734R9XHYJ;
 				INFOPLIST_FILE = KuangJia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
