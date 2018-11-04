@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "TabBarController.h"
+#import "WrapperViewController.h"
+#import "ProfileViewController.h"
+#import "JSBridgeViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -15,6 +19,45 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    TabBarController *tabBarController = [[TabBarController alloc] init];
+    self.window.rootViewController = tabBarController;
+    
+    // first
+    UINavigationController *first = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+    first.tabBarItem.title = @"native";
+    
+    // second
+    JSBridgeViewController *webVc = [[JSBridgeViewController alloc] init];
+    webVc.url = @"https://github.com";
+    UINavigationController *second = [[UINavigationController alloc] initWithRootViewController:webVc];
+    second.tabBarItem.title = @"webView";
+    
+    // third
+    WrapperViewController *wrapperVc = [[WrapperViewController alloc] init];
+    
+    ProfileViewController *profileVc = [[ProfileViewController alloc] init];
+    JSBridgeViewController *webViewVc = [[JSBridgeViewController alloc] init];
+
+    webViewVc.filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    wrapperVc.subViewControllers = @[profileVc,webViewVc];
+    UINavigationController *third = [[UINavigationController alloc] initWithRootViewController:wrapperVc];
+    third.tabBarItem.title = @"动态切换";
+    
+    
+    
+    
+    
+    tabBarController.viewControllers = @[first,second,third];
+    
+    
+    
+    
+    
+    
     return YES;
 }
 

@@ -24,7 +24,11 @@
     if ([segue.identifier isEqualToString:@"webViewControlerDemo"]) {
         JSBridgeViewController *viewControlelr = segue.destinationViewController;
         viewControlelr.filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    } else if ([segue.identifier isEqualToString:@"baidu"]) {
+        JSBridgeViewController *viewControlelr = segue.destinationViewController;
+        viewControlelr.url = @"https://www.baidu.com";
     }
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

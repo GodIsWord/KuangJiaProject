@@ -25,6 +25,8 @@
     [self.view addSubview:view];
     self.webView = view;
 
+    [view addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:nil];
+    
     // 加载插件
 
 
@@ -62,6 +64,19 @@
 
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"title"]) {
+        self.navigationItem.title = change[NSKeyValueChangeNewKey];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     NSLog(@"%s",__func__);
-}@end
+}
+- (void)dealloc {
+    [self.webView removeObserver:self forKeyPath:@"title"];
+}
+
+@end

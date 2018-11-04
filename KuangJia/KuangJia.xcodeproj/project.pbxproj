@@ -12,6 +12,10 @@
 		8534BC7B218EE4EC00A0EC4E /* JSBAlbumPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC70218EE4EB00A0EC4E /* JSBAlbumPlugin.m */; };
 		8534BC7C218EE4EC00A0EC4E /* JSBOpenCameraPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC74218EE4EC00A0EC4E /* JSBOpenCameraPlugin.m */; };
 		8534BC7D218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC77218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m */; };
+		8534BC82218F1BFE00A0EC4E /* WrapperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC81218F1BFE00A0EC4E /* WrapperViewController.m */; };
+		8534BC85218F265400A0EC4E /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC84218F265400A0EC4E /* TabBarController.m */; };
+		8534BC88218F280100A0EC4E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC87218F280100A0EC4E /* ProfileViewController.m */; };
+		8534BC8A218F287700A0EC4E /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8534BC89218F287700A0EC4E /* ProfileViewController.xib */; };
 		854A7718218588EA0027704C /* JSBWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A7716218588E90027704C /* JSBWebView.m */; };
 		854A7721218589100027704C /* JSBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A7720218589100027704C /* JSBridgeViewController.m */; };
 		854A7723218589A90027704C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 854A7722218589A90027704C /* index.html */; };
@@ -88,6 +92,13 @@
 		8534BC76218EE4EC00A0EC4E /* JSBAlbumPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBAlbumPlugin.h; sourceTree = "<group>"; };
 		8534BC77218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBQrCodeScannerPlugin.m; sourceTree = "<group>"; };
 		8534BC7E218EE83C00A0EC4E /* JSBPlugins.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBPlugins.h; sourceTree = "<group>"; };
+		8534BC80218F1BFE00A0EC4E /* WrapperViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WrapperViewController.h; sourceTree = "<group>"; };
+		8534BC81218F1BFE00A0EC4E /* WrapperViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WrapperViewController.m; sourceTree = "<group>"; };
+		8534BC83218F265400A0EC4E /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		8534BC84218F265400A0EC4E /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		8534BC86218F280100A0EC4E /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		8534BC87218F280100A0EC4E /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		8534BC89218F287700A0EC4E /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		854A7715218588E90027704C /* JSBWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBWebView.h; sourceTree = "<group>"; };
 		854A7716218588E90027704C /* JSBWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBWebView.m; sourceTree = "<group>"; };
 		854A7717218588EA0027704C /* JSBWebViewHandleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBWebViewHandleProtocol.h; sourceTree = "<group>"; };
@@ -223,6 +234,15 @@
 			path = Plugin;
 			sourceTree = "<group>";
 		};
+		8534BC7F218F1BA700A0EC4E /* WrapperViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8534BC80218F1BFE00A0EC4E /* WrapperViewController.h */,
+				8534BC81218F1BFE00A0EC4E /* WrapperViewController.m */,
+			);
+			path = WrapperViewController;
+			sourceTree = "<group>";
+		};
 		854A7714218588D00027704C /* JSBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +357,7 @@
 		E62A39C2217EB988005DC986 /* KuangJia */ = {
 			isa = PBXGroup;
 			children = (
+				8534BC7F218F1BA700A0EC4E /* WrapperViewController */,
 				E662D2C9218EE2C000A6B9E9 /* LJContactManager */,
 				E662D2BF218EDA8E00A6B9E9 /* SecritTest */,
 				E662D229218B3D3C00A6B9E9 /* CustomService */,
@@ -347,8 +368,13 @@
 				854A7714218588D00027704C /* JSBridge */,
 				E62A39C3217EB988005DC986 /* AppDelegate.h */,
 				E62A39C4217EB988005DC986 /* AppDelegate.m */,
+				8534BC83218F265400A0EC4E /* TabBarController.h */,
+				8534BC84218F265400A0EC4E /* TabBarController.m */,
 				E662D2C0218EDBCB00A6B9E9 /* HomeSecriteViewController.h */,
 				E662D2C1218EDBCB00A6B9E9 /* HomeSecriteViewController.m */,
+				8534BC86218F280100A0EC4E /* ProfileViewController.h */,
+				8534BC87218F280100A0EC4E /* ProfileViewController.m */,
+				8534BC89218F287700A0EC4E /* ProfileViewController.xib */,
 				E62A39C6217EB988005DC986 /* ViewController.h */,
 				E62A39C7217EB988005DC986 /* ViewController.m */,
 				E62A39C9217EB988005DC986 /* Main.storyboard */,
@@ -594,6 +620,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8534BC8A218F287700A0EC4E /* ProfileViewController.xib in Resources */,
 				E662D24F218B3D9C00A6B9E9 /* scanSuccess.wav in Resources */,
 				CA6B04C6218A888C005AC311 /* close@3x.png in Resources */,
 				E662D279218B3DBF00A6B9E9 /* ydhoto_select_yes@2x.png in Resources */,
@@ -659,14 +686,15 @@
 				CA6B04C0218A6514005AC311 /* KJLoginViewController.m in Sources */,
 				E662D25C218B3DB200A6B9E9 /* YDWeakProxy.m in Sources */,
 				E662D2D6218EE2C000A6B9E9 /* LJPerson.m in Sources */,
-				854A771E218588F60027704C /* JSBridgeAlertPlugin.m in Sources */,
 				854A7721218589100027704C /* JSBridgeViewController.m in Sources */,
 				E62A39D3217EB989005DC986 /* main.m in Sources */,
 				E662D27C218B3DBF00A6B9E9 /* YDPhotoAlbumNaviViewController.m in Sources */,
 				E662D248218B3D9400A6B9E9 /* XBWeakProxy.m in Sources */,
 				8534BC7B218EE4EC00A0EC4E /* JSBAlbumPlugin.m in Sources */,
 				E662D25B218B3DB200A6B9E9 /* YDLoacationManager.m in Sources */,
+				8534BC82218F1BFE00A0EC4E /* WrapperViewController.m in Sources */,
 				8534BC7C218EE4EC00A0EC4E /* JSBOpenCameraPlugin.m in Sources */,
+				8534BC88218F280100A0EC4E /* ProfileViewController.m in Sources */,
 				E662D2C5218EDD3400A6B9E9 /* YDSecritManger.m in Sources */,
 				E662D27B218B3DBF00A6B9E9 /* YDPhotoAlbumViewController.m in Sources */,
 				CA6B04BF218A6514005AC311 /* KJTextField.m in Sources */,
@@ -687,6 +715,7 @@
 				8534BC78218EE4EC00A0EC4E /* JSBLoginPlugin.m in Sources */,
 				E662D22F218B3D8400A6B9E9 /* YDScanerNaviViewController.m in Sources */,
 				E662D2D7218EE2C000A6B9E9 /* LJPickerDetailDelegate.m in Sources */,
+				8534BC85218F265400A0EC4E /* TabBarController.m in Sources */,
 				CA6B04AA218A6508005AC311 /* KJRegisterViewController.m in Sources */,
 				854A7718218588EA0027704C /* JSBWebView.m in Sources */,
 			);
@@ -830,16 +859,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S734R9XHYJ;
+				DEVELOPMENT_TEAM = PXL86E7953;
 				INFOPLIST_FILE = KuangJia/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Test.KuangJia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -849,16 +878,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S734R9XHYJ;
+				DEVELOPMENT_TEAM = PXL86E7953;
 				INFOPLIST_FILE = KuangJia/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Test.KuangJia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
