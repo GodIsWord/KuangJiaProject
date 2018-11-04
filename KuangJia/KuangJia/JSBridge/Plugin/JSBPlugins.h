@@ -34,4 +34,13 @@
  */
 #import "JSBLoginPlugin.h"
 
+/**
+ * 发短信
+ */
+#import "JSBSendMessagePlugin.h"
+
+/**
+ * 打电话
+ */
+#import "JSBCallContactPlugin.h"
 #endif /* JSBPlugins_h */

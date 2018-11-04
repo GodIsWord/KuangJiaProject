@@ -44,12 +44,19 @@
 
     JSBQrCodeScannerPlugin *qrCodeScannerPlugin = [[JSBQrCodeScannerPlugin alloc] init];
     qrCodeScannerPlugin.presentingViewController = self;
-
+    
+    JSBSendMessagePlugin *sendMessagePlugin = [[JSBSendMessagePlugin alloc] init];
+    sendMessagePlugin.presentingViewController = self;
+    
+    JSBCallContactPlugin *callContactPlugin = [[JSBCallContactPlugin alloc] init];
+    
     [self.webView registerJSHandles:@[openCameraPlugin,
                                       albumPlugin,
                                       contactPlugin,
                                       loginPlugin,
-                                      qrCodeScannerPlugin]];
+                                      qrCodeScannerPlugin,
+                                      sendMessagePlugin,
+                                      callContactPlugin]];
 
 
     if (self.url) {

@@ -83,7 +83,6 @@ static YDSecritManger *manager;
         controller.messageComposeDelegate = [YDSecritManger shareInstance];
         [viewController presentViewController:controller animated:YES completion:nil];
         [[[[controller viewControllers] lastObject] navigationItem] setTitle:@"title"];//修改短信界面标题
-        
         [[YDSecritManger shareInstance] setMassageResultHandle:complation];
     }
     else {

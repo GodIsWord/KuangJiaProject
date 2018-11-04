@@ -16,6 +16,8 @@
 		8534BC85218F265400A0EC4E /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC84218F265400A0EC4E /* TabBarController.m */; };
 		8534BC88218F280100A0EC4E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC87218F280100A0EC4E /* ProfileViewController.m */; };
 		8534BC8A218F287700A0EC4E /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8534BC89218F287700A0EC4E /* ProfileViewController.xib */; };
+		8534BC8D218F371B00A0EC4E /* JSBSendMessagePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC8C218F371B00A0EC4E /* JSBSendMessagePlugin.m */; };
+		8534BC90218F38FE00A0EC4E /* JSBCallContactPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8534BC8F218F38FE00A0EC4E /* JSBCallContactPlugin.m */; };
 		854A7718218588EA0027704C /* JSBWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A7716218588E90027704C /* JSBWebView.m */; };
 		854A7721218589100027704C /* JSBridgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 854A7720218589100027704C /* JSBridgeViewController.m */; };
 		854A7723218589A90027704C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 854A7722218589A90027704C /* index.html */; };
@@ -99,6 +101,10 @@
 		8534BC86218F280100A0EC4E /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		8534BC87218F280100A0EC4E /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		8534BC89218F287700A0EC4E /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		8534BC8B218F371B00A0EC4E /* JSBSendMessagePlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBSendMessagePlugin.h; sourceTree = "<group>"; };
+		8534BC8C218F371B00A0EC4E /* JSBSendMessagePlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBSendMessagePlugin.m; sourceTree = "<group>"; };
+		8534BC8E218F38FE00A0EC4E /* JSBCallContactPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBCallContactPlugin.h; sourceTree = "<group>"; };
+		8534BC8F218F38FE00A0EC4E /* JSBCallContactPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBCallContactPlugin.m; sourceTree = "<group>"; };
 		854A7715218588E90027704C /* JSBWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBWebView.h; sourceTree = "<group>"; };
 		854A7716218588E90027704C /* JSBWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSBWebView.m; sourceTree = "<group>"; };
 		854A7717218588EA0027704C /* JSBWebViewHandleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSBWebViewHandleProtocol.h; sourceTree = "<group>"; };
@@ -229,6 +235,10 @@
 				8534BC74218EE4EC00A0EC4E /* JSBOpenCameraPlugin.m */,
 				8534BC75218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.h */,
 				8534BC77218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m */,
+				8534BC8B218F371B00A0EC4E /* JSBSendMessagePlugin.h */,
+				8534BC8C218F371B00A0EC4E /* JSBSendMessagePlugin.m */,
+				8534BC8E218F38FE00A0EC4E /* JSBCallContactPlugin.h */,
+				8534BC8F218F38FE00A0EC4E /* JSBCallContactPlugin.m */,
 				8534BC7E218EE83C00A0EC4E /* JSBPlugins.h */,
 			);
 			path = Plugin;
@@ -675,6 +685,7 @@
 				E662D247218B3D9400A6B9E9 /* UIView+XBFrame.m in Sources */,
 				CA6B04A9218A6508005AC311 /* KJRegisterView.m in Sources */,
 				E662D23B218B3D8C00A6B9E9 /* IMYWebView.m in Sources */,
+				8534BC8D218F371B00A0EC4E /* JSBSendMessagePlugin.m in Sources */,
 				CA6B04BC218A6514005AC311 /* KJLoginView.m in Sources */,
 				CA6B04AC218A6508005AC311 /* KJForgetView.m in Sources */,
 				E662D2D8218EE2C000A6B9E9 /* NSString+LJExtension.m in Sources */,
@@ -711,6 +722,7 @@
 				CA6B04BE218A6514005AC311 /* KJCountryTableViewController.m in Sources */,
 				E662D273218B3DBF00A6B9E9 /* YDPhotoAlbumManager.m in Sources */,
 				E662D23D218B3D8C00A6B9E9 /* YDScanWebViewController.m in Sources */,
+				8534BC90218F38FE00A0EC4E /* JSBCallContactPlugin.m in Sources */,
 				E662D274218B3DBF00A6B9E9 /* YDPhotoGroupModel.m in Sources */,
 				8534BC78218EE4EC00A0EC4E /* JSBLoginPlugin.m in Sources */,
 				E662D22F218B3D8400A6B9E9 /* YDScanerNaviViewController.m in Sources */,

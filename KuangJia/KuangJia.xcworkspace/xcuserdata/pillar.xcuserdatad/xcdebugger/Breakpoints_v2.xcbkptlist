@@ -13,5 +13,84 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuangJia/SecritTest/YDSecritManger.m"
+            timestampString = "563035302.6022249"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-messageComposeViewController:didFinishWithResult:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuangJia/JSBridge/Plugin/JSBSendMessagePlugin.m"
+            timestampString = "563035302.602635"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-handleWithData:responseCallback:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JSBSendMessagePlugin handleWithData:responseCallback:]"
+                  moduleName = "KuangJia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pillar/Desktop/KuangJiaProject/KuangJia/KuangJia/JSBridge/Plugin/JSBSendMessagePlugin.m"
+                  timestampString = "563035221.415264"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__56-[JSBSendMessagePlugin handleWithData:responseCallback:]_block_invoke"
+                  moduleName = "KuangJia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pillar/Desktop/KuangJiaProject/KuangJia/KuangJia/JSBridge/Plugin/JSBSendMessagePlugin.m"
+                  timestampString = "563035221.417136"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.24"
+                  moduleName = "KuangJia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pillar/Desktop/KuangJiaProject/KuangJia/KuangJia/JSBridge/Plugin/JSBSendMessagePlugin.m"
+                  timestampString = "563035221.418833"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

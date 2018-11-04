@@ -30,6 +30,8 @@
         <button id="btn2">二维码扫描</button>
         <button id="btn3">通讯录</button>
         <button id="btn4">登陆</button>
+        <button id="btn5">发短信</button>
+        <button id="btn6">打电话</button>
         <p></p>
     </body>
     <script>
@@ -105,6 +107,19 @@
                    console.log("OC中返回的参数:", responseData)
                });
            };
+        
+            document.getElementById('btn5').onclick = function () {
+               bridge.callHandler('sendMessage', {'contact':'10010','message':'测试'}, function responseCallback(responseData) {
+                   console.log("OC中返回的参数:", responseData)
+               });
+           };
+           document.getElementById('btn6').onclick = function () {
+               bridge.callHandler('callContact', {'contact':10010}, function responseCallback(responseData) {
+                   console.log("OC中返回的参数:", responseData)
+               });
+           };
+                                    
+                                    
        })
     </script>
 </html>
