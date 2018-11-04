@@ -50,7 +50,7 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
-    self.navigationBar.barTintColor = [UIColor redColor];
+    self.navigationBar.barTintColor = [UIColor grayColor];
     
 }
 -(void)btnClickBack
