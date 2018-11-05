@@ -350,62 +350,51 @@
 }
 
 -(void)loginButtonDidClicked{
-    NSLog(@"登陆");
+    if ([self.delegate respondsToSelector:@selector(login)]) {
+        [self.delegate login];
+        
+    }
+    
 }
 -(void)forgetButtonDidClicked{
-    KJForgetViewController *forget = [[KJForgetViewController alloc]init];
-    UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:forget];
-    [self.viewController presentViewController:na animated:YES completion:nil];
+    if ([self.delegate respondsToSelector:@selector(forget)]) {
+        [self.delegate forget];
+        
+    }
     
 }
 -(void)registButtonDidClicked{
-    
-    KJRegisterViewController *regist = [[KJRegisterViewController alloc]init];
-    UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:regist];
-    [self.viewController presentViewController:na animated:YES completion:nil];
+    if ([self.delegate respondsToSelector:@selector(regist)]) {
+        [self.delegate regist];
+        
+    }
+
     
 }
 -(void)countryBtnDidClicked{
-    
-    KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
-#warning 小白想想这里，view层处理了业务逻辑。。 这种设计模式对不对？
-    country.delegate = self;
-
-    UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:country];
-    [self.viewController presentViewController:na animated:YES completion:nil];
+    if ([self.delegate respondsToSelector:@selector(country)]) {
+        [self.delegate country];
+       
+    }
 }
 
 
 -(void)moreButtonDidClicked{
-    //创建AlertController对象 preferredStyle可以设置是AlertView样式或者ActionSheet样式
-    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"其他账号登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    if ([self.delegate respondsToSelector:@selector(more)]) {
+        [self.delegate more];
         
-    }];
-    
-    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"账号挂失" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        [self.viewController dismissViewControllerAnimated:YES completion:nil];
-    }];
-    //添加按钮
-    [alertC addAction:action1];
-    [alertC addAction:action2];
-    [alertC addAction:action3];
-    //显示
-    [self.na presentViewController:alertC animated:YES completion:nil];
+    }
     
 }
 
-- (UIViewController *)viewController {
-    id responder = self.nextResponder;
-    while (![responder isKindOfClass:[UIViewController class]]) {
-        responder = [responder nextResponder];
-    }
-    return (UIViewController *)responder;
-}
+//- (UIViewController *)viewController {
+//    id responder = self.nextResponder;
+//    while (![responder isKindOfClass:[UIViewController class]]) {
+//        responder = [responder nextResponder];
+//    }
+//    return (UIViewController *)responder;
+//}
 
 #pragma mark -- KJCountryTableViewControllerDelegate
 -(void)searchCountry:(NSString *)country{

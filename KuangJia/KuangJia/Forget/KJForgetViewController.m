@@ -8,7 +8,8 @@
 
 #import "KJForgetViewController.h"
 #import "KJForgetView.h"
-@interface KJForgetViewController ()
+#import "KJCountryTableViewController.h"
+@interface KJForgetViewController ()<KJForgetViewDelegate>
 
 @property (strong, nonatomic) KJForgetView *headView;
 @end
@@ -30,7 +31,7 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeEdit)];
     [self.headView addGestureRecognizer:tap];
-    self.headView.na = self.navigationController;
+    self.headView.delegate = self;
     
 }
 
@@ -40,6 +41,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     
     [self.headView.mobileTextField becomeFirstResponder];
+    
     
 }
 
@@ -63,6 +65,19 @@
 
 - (void)closeEdit {
     [self.view endEditing:YES];
+}
+
+-(void)country{
+    
+    KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
+    country.delegate = self.headView;
+    UINavigationController *na = [[UINavigationController alloc] initWithRootViewController:country];
+    [self.navigationController presentViewController:na animated:YES completion:nil];
+    
+}
+
+-(void)next{
+    NSLog(@"next");
 }
 -(void)dealloc{
     

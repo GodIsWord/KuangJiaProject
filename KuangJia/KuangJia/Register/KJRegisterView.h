@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "KJTextField.h"
+@protocol KJRegisterViewDelegate <NSObject>
+- (void)country;
+- (void)next;
 
+@end
 @interface KJRegisterView : UIView
 @property (strong, nonatomic) KJTextField *mobileTextField;
-@property (strong, nonatomic) UINavigationController *na;
+@property (nonatomic, weak) id<KJRegisterViewDelegate> delegate;
 
 @end

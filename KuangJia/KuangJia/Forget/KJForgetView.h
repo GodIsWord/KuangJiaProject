@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "KJTextField.h"
+@protocol KJForgetViewDelegate <NSObject>
+- (void)country;
+- (void)next;
+
+@end
 
 @interface KJForgetView : UIView
 @property (strong, nonatomic) KJTextField *mobileTextField;
-@property (strong, nonatomic) UINavigationController *na;
+@property (nonatomic, weak) id<KJForgetViewDelegate> delegate;
 
 @end

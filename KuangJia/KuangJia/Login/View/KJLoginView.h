@@ -7,9 +7,17 @@
 
 #import <UIKit/UIKit.h>
 #import "KJTextField.h"
+@protocol KJLoginViewDelegate <NSObject>
+- (void)country;
+- (void)forget;
+- (void)login;
+- (void)regist;
+- (void)more;
+@end
 
 @interface KJLoginView : UIView
 @property (strong, nonatomic) KJTextField *mobileTextField;
 @property (strong, nonatomic) KJTextField *passwordTextField;
-@property (strong, nonatomic) UINavigationController *na;
+@property (nonatomic, weak) id<KJLoginViewDelegate> delegate;
+
 @end

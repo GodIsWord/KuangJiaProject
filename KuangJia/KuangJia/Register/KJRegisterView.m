@@ -159,23 +159,31 @@
     }];
     
 }
--(void)backBtnDidClicked{
-    NSLog(@"注册返回");
-    [self.na dismissViewControllerAnimated:YES completion:nil];
-}
+
 -(void)countryBtnDidClicked{
     
-    KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
-    UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:country];
-    country.delegate = self;
-    
-    [self.na presentViewController:na animated:YES completion:nil];
+    if ([self.delegate respondsToSelector:@selector(country)]) {
+        [self.delegate country];
+        
+    }
 }
 -(void)nextButtonDidClicked{
-    // 跳验证码
-        KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
-        [self.na pushViewController:country animated:YES];
+    if ([self.delegate respondsToSelector:@selector(next)]) {
+        [self.delegate next];
+        
+    }
     
+}
+- (UIViewController *)viewController {
+    id responder = self.nextResponder;
+    while (![responder isKindOfClass:[UIViewController class]]) {
+        responder = [responder nextResponder];
+    }
+    return (UIViewController *)responder;
+}
+
+-(void)backBtnDidClicked{
+    [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
 #pragma mark -- KJCountryTableViewControllerDelegate
 -(void)searchCountry:(NSString *)country{

@@ -8,7 +8,8 @@
 
 #import "KJRegisterViewController.h"
 #import "KJRegisterView.h"
-@interface KJRegisterViewController ()
+#import "KJCountryTableViewController.h"
+@interface KJRegisterViewController ()<KJRegisterViewDelegate>
 
 @property (strong, nonatomic) KJRegisterView *headView;
 @end
@@ -30,7 +31,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeEdit)];
     [self.headView addGestureRecognizer:tap];
-     self.headView.na = self.navigationController;
+    self.headView.delegate = self;
     
 }
 
@@ -60,4 +61,16 @@
     [self.view endEditing:YES];
 }
 
+-(void)country{
+    
+    KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
+    country.delegate = self.headView;
+    UINavigationController *na = [[UINavigationController alloc] initWithRootViewController:country];
+    [self.navigationController presentViewController:na animated:YES completion:nil];
+    
+}
+
+-(void)next{
+    NSLog(@"next");
+}
 @end
