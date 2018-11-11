@@ -120,8 +120,24 @@
                 //配置扫描view
             } else {
                 NSString *title = @"请在iPhone的”设置-隐私-相机“选项中，允许App访问你的相机";
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:@"" delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil];
-                [alertView show];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        NSURL * url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                        if([[UIApplication sharedApplication] canOpenURL:url]) {
+                            
+                            [[UIApplication sharedApplication] openURL:url];
+                        }
+                    }];
+                    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                        [self btnClickBack];
+                    }];
+                    UIAlertController *controller = [UIAlertController alertControllerWithTitle:nil message:title preferredStyle:UIAlertControllerStyleAlert];
+                    [controller addAction:cancleAction];
+                    [controller addAction:okAction];
+                    [self presentViewController:controller animated:YES completion:nil];
+                    
+                });
             }
             
         });

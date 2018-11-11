@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "JSBridgeViewController.h"
-#import "HomeSecriteViewController.h"
+#import "KJLoginViewController.h"
 @interface ViewController ()
 
 @end
@@ -24,7 +24,7 @@
     if ([segue.identifier isEqualToString:@"webViewControlerDemo"]) {
         JSBridgeViewController *viewControlelr = segue.destinationViewController;
         viewControlelr.filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
-    } else if ([segue.identifier isEqualToString:@"baidu"]) {
+    } else if ([segue.identifier containsString:@"baidu"]) {
         JSBridgeViewController *viewControlelr = segue.destinationViewController;
         viewControlelr.url = @"https://www.baidu.com";
     }
@@ -33,8 +33,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 1) {
-        HomeSecriteViewController *viewController = [HomeSecriteViewController new];
-        [self.navigationController pushViewController:viewController animated:YES];
+        KJLoginViewController *loginViewController = [[KJLoginViewController alloc]init];
+        UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:loginViewController];
+        [self.navigationController presentViewController:na animated:YES completion:nil];
     }
 }
 - (void)didReceiveMemoryWarning {

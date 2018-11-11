@@ -11,6 +11,9 @@
 #import "WrapperViewController.h"
 #import "ProfileViewController.h"
 #import "JSBridgeViewController.h"
+
+#import "HomeSecriteViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -51,16 +54,24 @@
     webViewVc.filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
     wrapperVc.subViewControllers = @[profileVc,webViewVc];
     UINavigationController *third = [[UINavigationController alloc] initWithRootViewController:wrapperVc];
-    third.tabBarItem.title = @"切换";
-    UIImage *thirdImage = [UIImage imageNamed:@"tab_person_normal.png"];
-    third.tabBarItem.image = [UIImage imageNamed:@"tab_person_normal.png"];
-    third.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_person_select.png"];
+    third.tabBarItem.title = @"页面切换";
+    UIImage *thirdImage = [UIImage imageNamed:@"tab_life_normal.png"];
+    third.tabBarItem.image = [UIImage imageNamed:@"tab_life_normal.png"];
+    third.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_life_select.png"];
     third.tabBarItem.imageInsets = UIEdgeInsetsMake(fabs((thirdImage.size.height-20)/2), fabs((thirdImage.size.height-20)/2), fabs((thirdImage.size.height-20)/2), fabs((thirdImage.size.height-20)/2));
     
     
+    HomeSecriteViewController *forth = [[HomeSecriteViewController alloc] init];
+    UINavigationController *naviForth = [[UINavigationController alloc] initWithRootViewController:forth];
+    forth.tabBarItem.title = @"我的";
+    forth.tabBarItem.image = [UIImage imageNamed:@"tab_person_normal.png"];
+    forth.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_person_select.png"];
+    forth.tabBarItem.imageInsets = UIEdgeInsetsMake(fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2));
     
     
-    tabBarController.viewControllers = @[first,second,third];
+    
+    
+    tabBarController.viewControllers = @[first,second,third,naviForth];
     
     
     
