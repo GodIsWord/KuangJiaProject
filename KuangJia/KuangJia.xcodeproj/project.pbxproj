@@ -85,6 +85,7 @@
 		E662D2ED2197F1AA00A6B9E9 /* tab_life_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2E72197F1AA00A6B9E9 /* tab_life_normal.png */; };
 		E662D2F02197F1F700A6B9E9 /* tab_profit_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2EE2197F1F700A6B9E9 /* tab_profit_normal.png */; };
 		E662D2F12197F1F700A6B9E9 /* tab_profit_select.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2EF2197F1F700A6B9E9 /* tab_profit_select.png */; };
+		E662D2FA2198176E00A6B9E9 /* YDCoverLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2F82198176D00A6B9E9 /* YDCoverLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -224,6 +225,8 @@
 		E662D2E72197F1AA00A6B9E9 /* tab_life_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_life_normal.png; sourceTree = "<group>"; };
 		E662D2EE2197F1F700A6B9E9 /* tab_profit_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_profit_normal.png; sourceTree = "<group>"; };
 		E662D2EF2197F1F700A6B9E9 /* tab_profit_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_profit_select.png; sourceTree = "<group>"; };
+		E662D2F82198176D00A6B9E9 /* YDCoverLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDCoverLocation.m; sourceTree = "<group>"; };
+		E662D2F92198176E00A6B9E9 /* YDCoverLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDCoverLocation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -480,6 +483,8 @@
 			isa = PBXGroup;
 			children = (
 				E662D251218B3DB200A6B9E9 /* Reasource */,
+				E662D2F92198176E00A6B9E9 /* YDCoverLocation.h */,
+				E662D2F82198176D00A6B9E9 /* YDCoverLocation.m */,
 				E662D253218B3DB200A6B9E9 /* YDCamoraViewController.h */,
 				E662D254218B3DB200A6B9E9 /* YDCamoraViewController.m */,
 				E662D255218B3DB200A6B9E9 /* YDLoacationManager.h */,
@@ -724,6 +729,7 @@
 				8534BC7D218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m in Sources */,
 				E662D247218B3D9400A6B9E9 /* UIView+XBFrame.m in Sources */,
 				CA6B04A9218A6508005AC311 /* KJRegisterView.m in Sources */,
+				E662D2FA2198176E00A6B9E9 /* YDCoverLocation.m in Sources */,
 				E662D23B218B3D8C00A6B9E9 /* IMYWebView.m in Sources */,
 				8534BC8D218F371B00A0EC4E /* JSBSendMessagePlugin.m in Sources */,
 				CA6B04BC218A6514005AC311 /* KJLoginView.m in Sources */,

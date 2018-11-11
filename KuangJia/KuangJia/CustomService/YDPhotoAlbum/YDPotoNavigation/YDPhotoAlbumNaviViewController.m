@@ -8,6 +8,8 @@
 
 #import "YDPhotoAlbumNaviViewController.h"
 
+#import "YDPhotoAlbumManager.h"
+
 
 @interface YDPhotoAlbumNaviViewController ()<UINavigationControllerDelegate,YDPhotoAlbumViewControllerDelegate>
 
@@ -28,6 +30,21 @@
 }
 -(void)initControllor
 {
+    [YDPhotoAlbumManager fetchRequestJaris:^(BOOL isCanUsPhotoLibrary, NSString *message) {
+        if (!isCanUsPhotoLibrary) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+                UIAlertController *controller = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+                [controller addAction:okAction];
+                [self presentViewController:controller animated:YES completion:nil];
+                
+            });
+        }
+    }];
+    
     YDPhotoGroupViewController *group = [[YDPhotoGroupViewController alloc] init];
     YDPhotoAlbumViewController *photo = [[YDPhotoAlbumViewController alloc] init];
     photo.finishDelegate = self;
