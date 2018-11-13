@@ -11,6 +11,9 @@
 #import "WrapperViewController.h"
 #import "ProfileViewController.h"
 #import "JSBridgeViewController.h"
+
+#import "HomeSecriteViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -28,13 +31,19 @@
     
     // first
     UINavigationController *first = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-    first.tabBarItem.title = @"native";
+    first.tabBarItem.title = @"首页";
+    first.tabBarItem.image = [UIImage imageNamed:@"tab_home_normal.png"];
+    first.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_home_select.png"];
+    first.tabBarItem.imageInsets = UIEdgeInsetsMake(fabs((first.tabBarItem.image.size.height-20)/2), fabs((first.tabBarItem.image.size.height-20)/2), fabs((first.tabBarItem.image.size.height-20)/2), fabs((first.tabBarItem.image.size.height-20)/2));
     
     // second
     JSBridgeViewController *webVc = [[JSBridgeViewController alloc] init];
-    webVc.url = @"https://github.com";
+    webVc.url = @"http://www.wfis.com.cn:8015";
     UINavigationController *second = [[UINavigationController alloc] initWithRootViewController:webVc];
-    second.tabBarItem.title = @"webView";
+    second.tabBarItem.title = @"网页";
+    second.tabBarItem.image = [UIImage imageNamed:@"tab_profit_normal.png"];
+    second.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_profit_select.png"];
+    second.tabBarItem.imageInsets = UIEdgeInsetsMake(fabs((second.tabBarItem.image.size.height-20)/2), fabs((second.tabBarItem.image.size.height-20)/2), fabs((second.tabBarItem.image.size.height-20)/2), fabs((second.tabBarItem.image.size.height-20)/2));
     
     // third
     WrapperViewController *wrapperVc = [[WrapperViewController alloc] init];
@@ -45,16 +54,24 @@
     webViewVc.filePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
     wrapperVc.subViewControllers = @[profileVc,webViewVc];
     UINavigationController *third = [[UINavigationController alloc] initWithRootViewController:wrapperVc];
-    third.tabBarItem.title = @"动态切换";
+    third.tabBarItem.title = @"页面切换";
+    UIImage *thirdImage = [UIImage imageNamed:@"tab_life_normal.png"];
+    third.tabBarItem.image = [UIImage imageNamed:@"tab_life_normal.png"];
+    third.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_life_select.png"];
+    third.tabBarItem.imageInsets = UIEdgeInsetsMake(fabs((thirdImage.size.height-20)/2), fabs((thirdImage.size.height-20)/2), fabs((thirdImage.size.height-20)/2), fabs((thirdImage.size.height-20)/2));
+    
+    
+    HomeSecriteViewController *forth = [[HomeSecriteViewController alloc] init];
+    UINavigationController *naviForth = [[UINavigationController alloc] initWithRootViewController:forth];
+    forth.tabBarItem.title = @"我的";
+    forth.tabBarItem.image = [UIImage imageNamed:@"tab_person_normal.png"];
+    forth.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_person_select.png"];
+    forth.tabBarItem.imageInsets = UIEdgeInsetsMake(fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2));
     
     
     
     
-    
-    tabBarController.viewControllers = @[first,second,third];
-    
-    
-    
+    tabBarController.viewControllers = @[first,second,third,naviForth];
     
     
     

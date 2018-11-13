@@ -77,6 +77,15 @@
 		E662D2D6218EE2C000A6B9E9 /* LJPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2CF218EE2C000A6B9E9 /* LJPerson.m */; };
 		E662D2D7218EE2C000A6B9E9 /* LJPickerDetailDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2D1218EE2C000A6B9E9 /* LJPickerDetailDelegate.m */; };
 		E662D2D8218EE2C000A6B9E9 /* NSString+LJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2D3218EE2C000A6B9E9 /* NSString+LJExtension.m */; };
+		E662D2E82197F1AA00A6B9E9 /* tab_life_select.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2E22197F1AA00A6B9E9 /* tab_life_select.png */; };
+		E662D2E92197F1AA00A6B9E9 /* tab_person_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2E32197F1AA00A6B9E9 /* tab_person_normal.png */; };
+		E662D2EA2197F1AA00A6B9E9 /* tab_person_select.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2E42197F1AA00A6B9E9 /* tab_person_select.png */; };
+		E662D2EB2197F1AA00A6B9E9 /* tab_home_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2E52197F1AA00A6B9E9 /* tab_home_normal.png */; };
+		E662D2EC2197F1AA00A6B9E9 /* tab_home_select.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2E62197F1AA00A6B9E9 /* tab_home_select.png */; };
+		E662D2ED2197F1AA00A6B9E9 /* tab_life_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2E72197F1AA00A6B9E9 /* tab_life_normal.png */; };
+		E662D2F02197F1F700A6B9E9 /* tab_profit_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2EE2197F1F700A6B9E9 /* tab_profit_normal.png */; };
+		E662D2F12197F1F700A6B9E9 /* tab_profit_select.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2EF2197F1F700A6B9E9 /* tab_profit_select.png */; };
+		E662D2FA2198176E00A6B9E9 /* YDCoverLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2F82198176D00A6B9E9 /* YDCoverLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -208,6 +217,16 @@
 		E662D2D1218EE2C000A6B9E9 /* LJPickerDetailDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJPickerDetailDelegate.m; sourceTree = "<group>"; };
 		E662D2D2218EE2C000A6B9E9 /* NSString+LJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LJExtension.h"; sourceTree = "<group>"; };
 		E662D2D3218EE2C000A6B9E9 /* NSString+LJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LJExtension.m"; sourceTree = "<group>"; };
+		E662D2E22197F1AA00A6B9E9 /* tab_life_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_life_select.png; sourceTree = "<group>"; };
+		E662D2E32197F1AA00A6B9E9 /* tab_person_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_person_normal.png; sourceTree = "<group>"; };
+		E662D2E42197F1AA00A6B9E9 /* tab_person_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_person_select.png; sourceTree = "<group>"; };
+		E662D2E52197F1AA00A6B9E9 /* tab_home_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_home_normal.png; sourceTree = "<group>"; };
+		E662D2E62197F1AA00A6B9E9 /* tab_home_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_home_select.png; sourceTree = "<group>"; };
+		E662D2E72197F1AA00A6B9E9 /* tab_life_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_life_normal.png; sourceTree = "<group>"; };
+		E662D2EE2197F1F700A6B9E9 /* tab_profit_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_profit_normal.png; sourceTree = "<group>"; };
+		E662D2EF2197F1F700A6B9E9 /* tab_profit_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_profit_select.png; sourceTree = "<group>"; };
+		E662D2F82198176D00A6B9E9 /* YDCoverLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDCoverLocation.m; sourceTree = "<group>"; };
+		E662D2F92198176E00A6B9E9 /* YDCoverLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDCoverLocation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +386,7 @@
 		E62A39C2217EB988005DC986 /* KuangJia */ = {
 			isa = PBXGroup;
 			children = (
+				E662D2E12197F1A000A6B9E9 /* Resource */,
 				8534BC7F218F1BA700A0EC4E /* WrapperViewController */,
 				E662D2C9218EE2C000A6B9E9 /* LJContactManager */,
 				E662D2BF218EDA8E00A6B9E9 /* SecritTest */,
@@ -463,6 +483,8 @@
 			isa = PBXGroup;
 			children = (
 				E662D251218B3DB200A6B9E9 /* Reasource */,
+				E662D2F92198176E00A6B9E9 /* YDCoverLocation.h */,
+				E662D2F82198176D00A6B9E9 /* YDCoverLocation.m */,
 				E662D253218B3DB200A6B9E9 /* YDCamoraViewController.h */,
 				E662D254218B3DB200A6B9E9 /* YDCamoraViewController.m */,
 				E662D255218B3DB200A6B9E9 /* YDLoacationManager.h */,
@@ -563,6 +585,21 @@
 			path = LJContactManager;
 			sourceTree = "<group>";
 		};
+		E662D2E12197F1A000A6B9E9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E662D2EE2197F1F700A6B9E9 /* tab_profit_normal.png */,
+				E662D2EF2197F1F700A6B9E9 /* tab_profit_select.png */,
+				E662D2E52197F1AA00A6B9E9 /* tab_home_normal.png */,
+				E662D2E62197F1AA00A6B9E9 /* tab_home_select.png */,
+				E662D2E72197F1AA00A6B9E9 /* tab_life_normal.png */,
+				E662D2E22197F1AA00A6B9E9 /* tab_life_select.png */,
+				E662D2E32197F1AA00A6B9E9 /* tab_person_normal.png */,
+				E662D2E42197F1AA00A6B9E9 /* tab_person_select.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		FBED94C887C4A368FA892AAA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,6 +668,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8534BC8A218F287700A0EC4E /* ProfileViewController.xib in Resources */,
+				E662D2E82197F1AA00A6B9E9 /* tab_life_select.png in Resources */,
 				E662D24F218B3D9C00A6B9E9 /* scanSuccess.wav in Resources */,
 				CA6B04C6218A888C005AC311 /* close@3x.png in Resources */,
 				E662D279218B3DBF00A6B9E9 /* ydhoto_select_yes@2x.png in Resources */,
@@ -638,11 +676,18 @@
 				E62A39D0217EB989005DC986 /* LaunchScreen.storyboard in Resources */,
 				854A7723218589A90027704C /* index.html in Resources */,
 				E662D278218B3DBF00A6B9E9 /* ydhoto_select_no@2x.png in Resources */,
+				E662D2F12197F1F700A6B9E9 /* tab_profit_select.png in Resources */,
+				E662D2F02197F1F700A6B9E9 /* tab_profit_normal.png in Resources */,
 				E662D24E218B3D9C00A6B9E9 /* scan_line@2x.png in Resources */,
 				E662D259218B3DB200A6B9E9 /* CamoraAssets.xcassets in Resources */,
+				E662D2EB2197F1AA00A6B9E9 /* tab_home_normal.png in Resources */,
+				E662D2ED2197F1AA00A6B9E9 /* tab_life_normal.png in Resources */,
 				CA6B04C7218A888C005AC311 /* close@2x.png in Resources */,
 				CA6B04C3218A6514005AC311 /* back.png in Resources */,
+				E662D2E92197F1AA00A6B9E9 /* tab_person_normal.png in Resources */,
 				CA6B04ED218BFFED005AC311 /* country.png in Resources */,
+				E662D2EA2197F1AA00A6B9E9 /* tab_person_select.png in Resources */,
+				E662D2EC2197F1AA00A6B9E9 /* tab_home_select.png in Resources */,
 				E62A39CD217EB989005DC986 /* Assets.xcassets in Resources */,
 				E662D277218B3DBF00A6B9E9 /* ydhoto_back@2x.png in Resources */,
 				E62A39CB217EB988005DC986 /* Main.storyboard in Resources */,
@@ -684,6 +729,7 @@
 				8534BC7D218EE4EC00A0EC4E /* JSBQrCodeScannerPlugin.m in Sources */,
 				E662D247218B3D9400A6B9E9 /* UIView+XBFrame.m in Sources */,
 				CA6B04A9218A6508005AC311 /* KJRegisterView.m in Sources */,
+				E662D2FA2198176E00A6B9E9 /* YDCoverLocation.m in Sources */,
 				E662D23B218B3D8C00A6B9E9 /* IMYWebView.m in Sources */,
 				8534BC8D218F371B00A0EC4E /* JSBSendMessagePlugin.m in Sources */,
 				CA6B04BC218A6514005AC311 /* KJLoginView.m in Sources */,
@@ -871,7 +917,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PXL86E7953;
+				DEVELOPMENT_TEAM = S734R9XHYJ;
 				INFOPLIST_FILE = KuangJia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -890,7 +936,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PXL86E7953;
+				DEVELOPMENT_TEAM = S734R9XHYJ;
 				INFOPLIST_FILE = KuangJia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

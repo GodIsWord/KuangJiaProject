@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.parentViewController.navigationItem.title = @"个人页面";
+    self.parentViewController.navigationItem.title = @"页面切换";
 
     
     // Do any additional setup after loading the view.
