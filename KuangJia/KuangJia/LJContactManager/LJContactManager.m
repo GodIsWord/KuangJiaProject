@@ -121,10 +121,11 @@
 #pragma mark - Public
 
 - (void)selectContactAtController:(UIViewController *)controller
-                      complection:(void (^)(NSString *, NSString *))completcion
+                      isCanSelect:(BOOL)isCanSelect
+                      complection:(void (^)(NSString *name, NSString *phone))completcion
 {
     self.isAdd = NO;
-    [self _presentFromController:controller];
+    [self presentFromController:controller isCanSelect:isCanSelect];
     
     self.handler = completcion;
 }
@@ -165,7 +166,7 @@
     self.pickerDelegate.phoneNum = phoneNum;
     self.pickerDelegate.controller = controller;
     
-    [self _presentFromController:controller];
+    [self presentFromController:controller isCanSelect:YES];
 }
 
 - (void)accessContactsComplection:(void (^)(BOOL, NSArray<LJPerson *> *))completcion
@@ -329,26 +330,27 @@ void _blockExecute(void (^completion)(BOOL authorizationA), BOOL authorizationB)
     }
 }
 
-- (void)_presentFromController:(UIViewController *)controller
+- (void)presentFromController:(UIViewController *)controller isCanSelect:(BOOL)isCanSelect
 {
     if (IOS9_OR_LATER)
     {
-        CNContactPickerViewController *pc = [[CNContactPickerViewController alloc] init];
+        CNContactPickerViewController *picker = [[CNContactPickerViewController alloc] init];
         if (self.isAdd)
         {
-            pc.delegate = self.pickerDelegate;
+            picker.delegate = self.pickerDelegate;
         }
         else
         {
-            pc.delegate = self.pickerDetailDelegate;
+            picker.delegate = self.pickerDetailDelegate;
+            picker.predicateForSelectionOfProperty = [NSPredicate predicateWithValue:isCanSelect];
         }
         
-        pc.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
+        picker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
         
         [self requestAddressBookAuthorization:^(BOOL authorization) {
             if (authorization)
             {
-                [controller presentViewController:pc animated:YES completion:nil];
+                [controller presentViewController:picker animated:YES completion:nil];
             }
             else
             {

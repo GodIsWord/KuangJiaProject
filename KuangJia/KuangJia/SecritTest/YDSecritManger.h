@@ -31,7 +31,7 @@ typedef NS_ENUM(NSUInteger, YDSecritMangerMessageResult) {
  @param viewController 弹出系统通讯录界面的viewcontroller
  @param completcion 调用结束后的回调
  */
-+(void)selectPhoneNumViewController:(UIViewController*)viewController complection:(void (^)(NSString *name, NSString *phone))completcion;
++(void)selectPhoneNumViewController:(UIViewController*)viewController isCanSelect:(BOOL)isCanSelect complection:(void (^)(NSString *name, NSString *phone))completcion;
 
 
 /**

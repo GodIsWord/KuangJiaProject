@@ -13,7 +13,7 @@
 
 - (void)handleWithData:(id)data responseCallback:(ResponseCallback)callback {
     NSLog(@"%s", __func__);
-    [YDSecritManger selectPhoneNumViewController:self.presentingViewController complection:^(NSString *name, NSString *phone) {
+    [YDSecritManger selectPhoneNumViewController:self.presentingViewController isCanSelect:YES complection:^(NSString *name, NSString *phone) {
         callback(@{@"name":name,@"phone":phone});
     }];
 

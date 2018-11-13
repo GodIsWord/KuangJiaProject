@@ -51,7 +51,7 @@
     switch (indexPath.row) {
         case 0:
         {
-            [YDSecritManger selectPhoneNumViewController:self complection:^(NSString *name, NSString *phone) {
+            [YDSecritManger selectPhoneNumViewController:self isCanSelect:NO complection:^(NSString *name, NSString *phone) {
                 NSLog(@"name:%@,phone:%@",name,phone);
             }];
         }

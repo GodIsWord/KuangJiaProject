@@ -30,12 +30,12 @@ static YDSecritManger *manager;
     return manager;
 }
 
-+(void)selectPhoneNumViewController:(UIViewController *)viewController complection:(void (^)(NSString *, NSString *))completcion
++(void)selectPhoneNumViewController:(UIViewController *)viewController isCanSelect:(BOOL)isCanSelect complection:(void (^)(NSString *, NSString *))completcion
 {
     if (!viewController) {
         return;
     }
-    [[LJContactManager sharedInstance] selectContactAtController:viewController complection:completcion];
+    [[LJContactManager sharedInstance] selectContactAtController:viewController isCanSelect:isCanSelect complection:completcion];
 }
 
 

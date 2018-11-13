@@ -31,13 +31,16 @@ typedef void (^LJContactChangeHandler) (void);
  */
 - (void)requestAddressBookAuthorization:(void (^) (BOOL authorization))completion;
 
+
 /**
- 选择联系人
+  选择联系人
 
  @param controller 控制器
+ @param isCanSelect 是否能使用拨打电话等功能 yes代表可以 no选中的时候 会直接回调页面消失
  @param completcion 回调
  */
 - (void)selectContactAtController:(UIViewController *)controller
+                      isCanSelect:(BOOL)isCanSelect
                       complection:(void (^)(NSString *name, NSString *phone))completcion;
 
 /**
