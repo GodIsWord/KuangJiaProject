@@ -104,6 +104,10 @@
                 if (block) {
                     block(items);
                 }
+            }else{
+                if (block) {
+                    block(nil);
+                }
             }
         }];
     });
