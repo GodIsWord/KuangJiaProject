@@ -104,6 +104,7 @@
 -(void)YDPhotoAlbumViewControllerSelectFinishResult:(NSArray *)resultes
 {
     NSLog(@"select photo finish");
+    
 }
 
 @end

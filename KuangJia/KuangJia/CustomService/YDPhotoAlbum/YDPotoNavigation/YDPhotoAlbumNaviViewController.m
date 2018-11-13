@@ -96,10 +96,10 @@
     return UIStatusBarStyleLightContent;
 }
 
--(void)YDPhotoAlbumViewControllerSelectFinishResult:(NSArray *)resultes
+-(void)photoAlbumSelectedViewController:(UIViewController*)controller result:(NSArray *)resultes
 {
-    if ([self.finishDelegate respondsToSelector:@selector(YDPhotoAlbumViewControllerSelectFinishResult:)]) {
-        [self.finishDelegate YDPhotoAlbumViewControllerSelectFinishResult:resultes];
+    if ([self.finishDelegate respondsToSelector:@selector(photoAlbumSelectedViewController:result:)]) {
+        [self.finishDelegate photoAlbumSelectedViewController:self result:resultes];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
