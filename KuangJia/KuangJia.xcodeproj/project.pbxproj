@@ -86,6 +86,7 @@
 		E662D2F02197F1F700A6B9E9 /* tab_profit_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2EE2197F1F700A6B9E9 /* tab_profit_normal.png */; };
 		E662D2F12197F1F700A6B9E9 /* tab_profit_select.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2EF2197F1F700A6B9E9 /* tab_profit_select.png */; };
 		E662D2FA2198176E00A6B9E9 /* YDCoverLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2F82198176D00A6B9E9 /* YDCoverLocation.m */; };
+		E6C6D1EC219DB38C0026C0E5 /* HttpRequestServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6D1EB219DB38C0026C0E5 /* HttpRequestServices.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,6 +228,8 @@
 		E662D2EF2197F1F700A6B9E9 /* tab_profit_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_profit_select.png; sourceTree = "<group>"; };
 		E662D2F82198176D00A6B9E9 /* YDCoverLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDCoverLocation.m; sourceTree = "<group>"; };
 		E662D2F92198176E00A6B9E9 /* YDCoverLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDCoverLocation.h; sourceTree = "<group>"; };
+		E6C6D1EA219DB38C0026C0E5 /* HttpRequestServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestServices.h; sourceTree = "<group>"; };
+		E6C6D1EB219DB38C0026C0E5 /* HttpRequestServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequestServices.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +422,7 @@
 		E662D229218B3D3C00A6B9E9 /* CustomService */ = {
 			isa = PBXGroup;
 			children = (
+				E6C6D1E9219DB38C0026C0E5 /* HttpRequest */,
 				E662D25D218B3DBF00A6B9E9 /* YDPhotoAlbum */,
 				E662D250218B3DB200A6B9E9 /* ShuiYinCamora */,
 				E662D23E218B3D9400A6B9E9 /* viewTools */,
@@ -600,6 +604,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		E6C6D1E9219DB38C0026C0E5 /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				E6C6D1EA219DB38C0026C0E5 /* HttpRequestServices.h */,
+				E6C6D1EB219DB38C0026C0E5 /* HttpRequestServices.m */,
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
 		FBED94C887C4A368FA892AAA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -745,6 +758,7 @@
 				E662D2D6218EE2C000A6B9E9 /* LJPerson.m in Sources */,
 				854A7721218589100027704C /* JSBridgeViewController.m in Sources */,
 				E62A39D3217EB989005DC986 /* main.m in Sources */,
+				E6C6D1EC219DB38C0026C0E5 /* HttpRequestServices.m in Sources */,
 				E662D27C218B3DBF00A6B9E9 /* YDPhotoAlbumNaviViewController.m in Sources */,
 				E662D248218B3D9400A6B9E9 /* XBWeakProxy.m in Sources */,
 				8534BC7B218EE4EC00A0EC4E /* JSBAlbumPlugin.m in Sources */,

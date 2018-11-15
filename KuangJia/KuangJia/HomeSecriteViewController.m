@@ -13,6 +13,10 @@
 #import "YDPhotoAlbumNaviViewController.h"
 #import "YDScanerNaviViewController.h"
 
+#import "HttpRequestServices.h"
+
+#import <CommonCrypto/CommonDigest.h>
+
 @interface HomeSecriteViewController ()<UITableViewDelegate,UITableViewDataSource,YDPhotoAlbumViewControllerDelegate>
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,copy) NSArray *dataSource;
@@ -24,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"个人信息";
-    self.dataSource = @[@"通讯录",@"短信发送",@"拨打电话",@"调用相机",@"打开相册",@"二维码 条形码扫描"];
+    self.dataSource = @[@"通讯录",@"短信发送",@"拨打电话",@"调用相机",@"打开相册",@"二维码 条形码扫描",@"登陆测试",@"check会话信息",@"close会话",@"注册"];
     [self createTableView];
 }
 
@@ -94,12 +98,63 @@
             [self presentViewController:navi animated:YES completion:nil];
         }
             break;
+        case 6:
+        {
+            //登陆测试
+            [[HttpRequestServices sharedInstance] AFGETRequestHeaderUrl:@"http://www.wfis.com.cn:8088/portal/openapi" appending:nil withParameters:@{@"cmd":@"portal.session.create",@"uid":@"admin",@"pwd":@"123"}];
+        }
+            break;
+        case 7:
+        {
+            //check测试
+            [[HttpRequestServices sharedInstance] AFGETRequestHeaderUrl:@"http://www.wfis.com.cn:8088/portal/openapi" appending:nil withParameters:@{@"cmd":@"portal.session.check",@"sid":[HttpRequestServices sharedInstance].userSid}];
+        }
+            break;
+        case 8:
+        {
+            //注销
+            [[HttpRequestServices sharedInstance] AFGETRequestHeaderUrl:@"http://www.wfis.com.cn:8088/portal/openapi" appending:nil withParameters:@{@"cmd":@"portal.session.close",@"sid":[HttpRequestServices sharedInstance].userSid}];
+        }
+            break;
+        case 9:
+        {
+            //注册
+            [[HttpRequestServices sharedInstance] AFGETRequestHeaderUrl:@"http://www.wfis.com.cn:8088/portal/openapi" appending:nil withParameters:@{@"cmd":@"org.user.create",@"departmentId":@"sadd",@"uid":@"1889287",@"userName":@"恍惚呃呃",@"roleId":@"231",@"password":@"test1"}];
+        }
+            break;
             
         default:
             break;
     }
 }
 
+
+#pragma mark - MD5加密 16位 大写
++ (NSString *)MD5ForUpper16Bate:(NSString *)str{
+    
+    NSString *md5Str = [self MD5ForUpper32Bate:str];
+    
+    NSString *string;
+    for (int i=0; i<24; i++) {
+        string=[md5Str substringWithRange:NSMakeRange(8, 16)];
+    }
+    return string;
+}
+#pragma mark - MD5加密 32位 大写
++ (NSString *)MD5ForUpper32Bate:(NSString *)str{
+    
+    //要进行UTF8的转码
+    const char* input = [str UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(input, (CC_LONG)strlen(input), result);
+    
+    NSMutableString *digest = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for (NSInteger i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
+        [digest appendFormat:@"%02X", result[i]];
+    }
+    
+    return digest;
+}
 
 -(void)YDPhotoAlbumViewControllerSelectFinishResult:(NSArray *)resultes
 {
