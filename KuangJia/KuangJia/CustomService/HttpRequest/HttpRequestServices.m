@@ -124,8 +124,11 @@ static HttpRequestServices *service ;
         [service.afnManager POST:url parameters:confirmDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"responsObject:%@",responseObject);
             
+            NSLog(@"responsObject:%@",responseObject);
+            
             NSDictionary *dic = responseObject;
-            if (dic[@"success"]) {
+            BOOL isSuccess = [dic[@"success"] boolValue];
+            if (isSuccess) {
                 if (success) {
                     success(dic);
                 }
