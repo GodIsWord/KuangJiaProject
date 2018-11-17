@@ -101,25 +101,70 @@
         case 6:
         {
             //登陆测试
-            [[HttpRequestServices sharedInstance] AFGETRequestHeaderUrl:@"http://www.wfis.com.cn:8088/portal/openapi" appending:nil withParameters:@{@"cmd":@"portal.session.create",@"uid":@"admin",@"pwd":@"123"}];
+            NSDictionary *params = @{@"cmd":@"portal.session.create",
+                                     @"uid":@"admin",
+                                     @"pwd":@"123"};
+            [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
+                
+                NSDictionary *responseObject = respons;
+                if ([responseObject.allKeys containsObject:@"data"]) {
+                    if ([responseObject[@"data"] isKindOfClass:NSString.class]) {
+                        NSString *str = [responseObject objectForKey:@"data"];
+                        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+                        if ([dict.allKeys containsObject:@"data"]) {
+                            if ([dict[@"data"] isKindOfClass:NSDictionary.class]) {
+                                if ([[dict[@"data"] allKeys] containsObject:@"sid"]) {
+                                    [HttpRequestServices sharedInstance].userSid = [dict[@"data"] objectForKey:@"sid"];
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            } faile:^(NSError *error) {
+                
+            }];
         }
             break;
         case 7:
         {
             //check测试
-            [[HttpRequestServices sharedInstance] AFGETRequestHeaderUrl:@"http://www.wfis.com.cn:8088/portal/openapi" appending:nil withParameters:@{@"cmd":@"portal.session.check",@"sid":[HttpRequestServices sharedInstance].userSid}];
+            NSDictionary *params = @{@"cmd":@"portal.session.check",
+                                     @"sid":@"eeee"};
+            [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
+                
+            } faile:^(NSError *error) {
+                
+            }];
         }
             break;
         case 8:
         {
             //注销
-            [[HttpRequestServices sharedInstance] AFGETRequestHeaderUrl:@"http://www.wfis.com.cn:8088/portal/openapi" appending:nil withParameters:@{@"cmd":@"portal.session.close",@"sid":[HttpRequestServices sharedInstance].userSid}];
+            NSDictionary *params = @{@"cmd":@"portal.session.close",
+                                     @"sid":[HttpRequestServices sharedInstance].userSid};
+            [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
+                
+            } faile:^(NSError *error) {
+                
+            }];
+            
         }
             break;
         case 9:
         {
             //注册
-            [[HttpRequestServices sharedInstance] AFGETRequestHeaderUrl:@"http://www.wfis.com.cn:8088/portal/openapi" appending:nil withParameters:@{@"cmd":@"org.user.create",@"departmentId":@"sadd",@"uid":@"1889287",@"userName":@"恍惚呃呃",@"roleId":@"231",@"password":@"test1"}];
+            NSDictionary *params = @{@"cmd":@"org.user.create",
+                                     @"departmentId":@"43127819-0cbb-472b-a095-0d4c253d3722",
+                                     @"uid":@"1889287",
+                                     @"userName":@"恍惚呃呃",
+                                     @"roleId":@"b5e2b9fb-bb86-4bb1-a549-5e75a575ebf3",
+                                     @"password":@"test1"};
+            [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
+                
+            } faile:^(NSError *error) {
+                
+            }];
         }
             break;
             

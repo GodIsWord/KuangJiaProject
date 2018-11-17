@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+//访问凭证
+static NSString * const sz_access_key = @"32e07a6c-cec4-41ac-8c3c-3e2b0255ade0";
+
+//密钥
+static NSString * const sz_secret = @"123456";
+
+static NSString * const sz_RequestHeader = @"http://www.wfis.com.cn:8088/portal/openapi";
+
+typedef NS_ENUM (NSUInteger, SZRequestMethodType){
+    SZRequestMethodTypeGet,
+    SZRequestMethodTypePost
+};
+
 
 @interface HttpRequestServices : NSObject
 
@@ -15,10 +28,12 @@
 
 + (instancetype)sharedInstance;
 + (void)deleteSharedInstance;
-//检测网络是否可用
+
 + (BOOL)isExistenceNetwork;
 
--(void)AFGETRequestHeaderUrl:(NSString*)header appending:(NSString*)appending withParameters:(NSDictionary *)parameters;
++(void)requestHeaderUrl:(NSString*)header appending:(NSString*)appending httpMethod:(SZRequestMethodType)methodType withParameters:(NSDictionary *)parameters success:(void(^)(NSDictionary *respons))success faile:(void(^)(NSError *error))faile;
+
++(void)requestAppending:(NSString*)appending httpMethod:(SZRequestMethodType)methodType withParameters:(NSDictionary *)parameters success:(void(^)(NSDictionary *respons))success faile:(void(^)(NSError *error))faile;
 
 @end
 
