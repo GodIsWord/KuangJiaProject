@@ -74,8 +74,8 @@
 -(void)login{
     //登陆测试
     NSDictionary *params = @{@"cmd":@"portal.session.create",
-                             @"uid":self.headView.mobileTextField.text,
-                             @"pwd":self.headView.passwordTextField.text};
+                             @"uid":@"admin",
+                             @"pwd":@"123"};
     [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
         
         NSDictionary *responseObject = respons;
@@ -87,22 +87,32 @@
                     if ([dict[@"data"] isKindOfClass:NSDictionary.class]) {
                         if ([[dict[@"data"] allKeys] containsObject:@"sid"]) {
                             [HttpRequestServices sharedInstance].userSid = [dict[@"data"] objectForKey:@"sid"];
-                            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dict[@"data"] ];
-                            NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
-                            [sidDefaults setObject:data forKey:@"sid"];
-                            [sidDefaults synchronize];
+                            NSDictionary *data = dict[@"data"];
+                            [[NSUserDefaults standardUserDefaults] setValue:data[@"sid"] forKey:@"sid"];
+                            [[NSUserDefaults standardUserDefaults] synchronize];
+                            
                         }
                     }
                 }
             }
         }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                        message:@"登录成功"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-            
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"登录成功"
+                                                                                 message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+
+        
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定"
+                                                           style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                               [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                                                               
+                                                           }];
+        
+        
+        
+        [alertController addAction:okAction];
+        
+        [self.navigationController presentViewController:alertController animated:YES completion:nil];
+
 
     } faile:^(NSError *error) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
@@ -141,13 +151,12 @@
     
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
-        NSData *data = [sidDefaults objectForKey:@"sid"];
         
-        KJLoginModel *model = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        NSString *sid = [sidDefaults valueForKey:@"sid"];
         
         //注销 sid是登录之后返回的ID
         NSDictionary *params = @{@"cmd":@"portal.session.close",
-                                 @"sid":model.sid?:@""};
+                                 @"sid":sid?:@""};
         [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
                                                             message:@"注销成功"

@@ -32,8 +32,8 @@
     // 未登录root是登录页面、登录root是tabBarController
 
     KJLoginViewController *login =[[KJLoginViewController alloc]init];
-
-        [self.window.rootViewController presentViewController:login animated:YES completion:nil];
+    UINavigationController *lona = [[UINavigationController alloc]initWithRootViewController:login];
+        [self.window.rootViewController presentViewController:lona animated:YES completion:nil];
 
     
     // first
