@@ -10,8 +10,7 @@
 #import "XBMacroDefinition.h"
 #import "Masonry.h"
 #import "KJTextField.h"
-#import "HttpRequestServices.h"
-
+#import "KJLoginManage.h"
 @interface KJSetPwdViewController ()<UITextFieldDelegate>
 
 @property (strong, nonatomic) UIButton *nextButton;
@@ -103,13 +102,8 @@
 
 - (void)nextButtonDidClicked{
     
-    NSDictionary *params = @{@"cmd":@"org.user.create",
-                             @"departmentId":@"43127819-0cbb-472b-a095-0d4c253d3722",
-                             @"uid":self.userName,
-                             @"userName":self.userName,
-                             @"roleId":@"b5e2b9fb-bb86-4bb1-a549-5e75a575ebf3",
-                             @"password":self.pwdTextField.text};
-    [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
+    [KJLoginManage registWithUserName:self.userName password:self.pwdTextField.text success:^(NSDictionary *result) {
+        
         // 注册成功
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
                                                         message:@"注册成功"
@@ -117,7 +111,8 @@
                                               cancelButtonTitle:@"确定"
                                               otherButtonTitles:nil, nil];
         [alert show];
-    } faile:^(NSError *error) {
+    } fail:^(NSError *error) {
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
                                                         message:@"注册失败"
                                                        delegate:nil
@@ -125,5 +120,7 @@
                                               otherButtonTitles:nil, nil];
         [alert show];
     }];
+  
+
 }
 @end

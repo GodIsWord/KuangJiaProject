@@ -13,8 +13,9 @@
 #import "KJCountryTableViewController.h"
 #import "KJForgetViewController.h"
 #import "KJRegisterViewController.h"
-#import "HttpRequestServices.h"
+#import "KJLoginManage.h"
 #import "KJLoginModel.h"
+
 @interface KJLoginViewController () <UIViewControllerTransitioningDelegate,UITableViewDelegate,KJLoginViewDelegate>{
     
 }
@@ -72,34 +73,12 @@
 }
 
 -(void)login{
-    //登陆测试
-    NSDictionary *params = @{@"cmd":@"portal.session.create",
-                             @"uid":@"admin",
-                             @"pwd":@"123"};
-    [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
+    [KJLoginManage loginWithUserName:self.headView.mobileTextField.text?:@"" password:self.headView.passwordTextField.text?:@"" success:^(NSDictionary *result) {
         
-        NSDictionary *responseObject = respons;
-        if ([responseObject.allKeys containsObject:@"data"]) {
-            if ([responseObject[@"data"] isKindOfClass:NSString.class]) {
-                NSString *str = [responseObject objectForKey:@"data"];
-                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
-                if ([dict.allKeys containsObject:@"data"]) {
-                    if ([dict[@"data"] isKindOfClass:NSDictionary.class]) {
-                        if ([[dict[@"data"] allKeys] containsObject:@"sid"]) {
-                            [HttpRequestServices sharedInstance].userSid = [dict[@"data"] objectForKey:@"sid"];
-                            NSDictionary *data = dict[@"data"];
-                            [[NSUserDefaults standardUserDefaults] setValue:data[@"sid"] forKey:@"sid"];
-                            [[NSUserDefaults standardUserDefaults] synchronize];
-                            
-                        }
-                    }
-                }
-            }
-        }
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"登录成功"
                                                                                  message:nil preferredStyle:UIAlertControllerStyleAlert];
         
-
+        
         
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定"
                                                            style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -112,9 +91,9 @@
         [alertController addAction:okAction];
         
         [self.navigationController presentViewController:alertController animated:YES completion:nil];
-
-
-    } faile:^(NSError *error) {
+        
+    } fail:^(NSError *error) {
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
                                                         message:@"登录失败"
                                                        delegate:nil
@@ -122,7 +101,7 @@
                                               otherButtonTitles:nil, nil];
         [alert show];
     }];
-    
+  
 }
 -(void)regist{
     KJRegisterViewController *regist = [[KJRegisterViewController alloc]init];
@@ -150,28 +129,23 @@
     }];
     
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
-        
-        NSString *sid = [sidDefaults valueForKey:@"sid"];
-        
-        //注销 sid是登录之后返回的ID
-        NSDictionary *params = @{@"cmd":@"portal.session.close",
-                                 @"sid":sid?:@""};
-        [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
+   
+        [KJLoginManage exitsuccess:^(NSDictionary *result) {
+            
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
                                                             message:@"注销成功"
                                                            delegate:nil
                                                   cancelButtonTitle:@"确定"
                                                   otherButtonTitles:nil, nil];
             [alert show];
-            
-        } faile:^(NSError *error) {
+        } fail:^(NSError *error) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
                                                             message:@"注销失败"
                                                            delegate:nil
                                                   cancelButtonTitle:@"确定"
                                                   otherButtonTitles:nil, nil];
             [alert show];
+            
         }];
         
     }];
