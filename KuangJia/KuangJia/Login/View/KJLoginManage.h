@@ -25,9 +25,4 @@
 +(void)exitsuccess:(void((^)(NSDictionary *result)))success
                     fail:(void((^)(NSError *error)))fail;
 
-// check
-+(void)checkWithUserName:(NSString *)userName
-                password:(NSString *)password
-                 success:(void((^)(NSDictionary *result)))success
-                    fail:(void((^)(NSError *error)))fail;
 @end

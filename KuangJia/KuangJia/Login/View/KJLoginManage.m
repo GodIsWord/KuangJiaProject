@@ -9,6 +9,11 @@
 #import "KJLoginManage.h"
 #import "HttpRequestServices.h"
 
+
+@interface KJLoginManage()
+@property (nonatomic, strong)dispatch_source_t time;
+
+@end
 @implementation KJLoginManage
 
 +(void)loginWithUserName:(NSString *)userName password:(NSString *)password  success:(void((^)(NSDictionary *result)))success fail:(void((^)(NSError *error)))fail{
@@ -96,6 +101,20 @@
         if (fail) {
             fail(error);
         }
+    }];
+    
+}
+-(void)checkWithUser {
+    //check测试 每隔5分钟
+    NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *sid = [sidDefaults valueForKey:@"sid"];
+    NSDictionary *params = @{@"cmd":@"portal.session.check",
+                             @"sid":sid?:@""};
+    [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
+        
+    } faile:^(NSError *error) {
+        
     }];
     
 }
