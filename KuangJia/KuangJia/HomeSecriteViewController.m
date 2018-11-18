@@ -114,6 +114,7 @@
                         if ([dict.allKeys containsObject:@"data"]) {
                             if ([dict[@"data"] isKindOfClass:NSDictionary.class]) {
                                 if ([[dict[@"data"] allKeys] containsObject:@"sid"] && [dict[@"result"]  isEqualToString:@"ok"]) {
+                                    // 记录本地
                                     [HttpRequestServices sharedInstance].userSid = [dict[@"data"] objectForKey:@"sid"];
                                 }else{
                                     NSLog(@"erroe:%@",[dict objectForKey:@"msg"]);
@@ -130,9 +131,9 @@
             break;
         case 7:
         {
-            //check测试
+            //check测试 每隔5分钟
             NSDictionary *params = @{@"cmd":@"portal.session.check",
-                                     @"sid":@"dee"};
+                                     @"sid":[HttpRequestServices sharedInstance].userSid};
             [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
                 
             } faile:^(NSError *error) {

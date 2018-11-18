@@ -9,6 +9,8 @@
 #import "KJRegisterViewController.h"
 #import "KJRegisterView.h"
 #import "KJCountryTableViewController.h"
+#import "KJSetPwdViewController.h"
+
 @interface KJRegisterViewController ()<KJRegisterViewDelegate>
 
 @property (strong, nonatomic) KJRegisterView *headView;
@@ -71,6 +73,10 @@
 }
 
 -(void)next{
-    NSLog(@"next");
+    
+    KJSetPwdViewController *SetPwd = [[KJSetPwdViewController alloc]init];
+    SetPwd.userName = self.headView.mobileTextField.text;
+    [self.navigationController pushViewController:SetPwd animated:YES];
+
 }
 @end

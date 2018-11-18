@@ -13,7 +13,7 @@
 #import "JSBridgeViewController.h"
 
 #import "HomeSecriteViewController.h"
-
+#import "KJLoginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -28,6 +28,13 @@
     
     TabBarController *tabBarController = [[TabBarController alloc] init];
     self.window.rootViewController = tabBarController;
+    
+    // 未登录root是登录页面、登录root是tabBarController
+
+    KJLoginViewController *login =[[KJLoginViewController alloc]init];
+
+        [self.window.rootViewController presentViewController:login animated:YES completion:nil];
+
     
     // first
     UINavigationController *first = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
@@ -67,14 +74,9 @@
     forth.tabBarItem.image = [UIImage imageNamed:@"tab_person_normal.png"];
     forth.tabBarItem.selectedImage = [UIImage imageNamed:@"tab_person_select.png"];
     forth.tabBarItem.imageInsets = UIEdgeInsetsMake(fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2));
-    
-    
-    
-    
+  
     tabBarController.viewControllers = @[first,second,third,naviForth];
-    
-    
-    
+
     return YES;
 }
 
