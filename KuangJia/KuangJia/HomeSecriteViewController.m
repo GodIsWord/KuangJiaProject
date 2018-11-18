@@ -102,7 +102,7 @@
         {
             //登陆测试
             NSDictionary *params = @{@"cmd":@"portal.session.create",
-                                     @"uid":@"admin",
+                                     @"uid":@"admin123",
                                      @"pwd":@"123"};
             [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
                 
@@ -113,8 +113,10 @@
                         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
                         if ([dict.allKeys containsObject:@"data"]) {
                             if ([dict[@"data"] isKindOfClass:NSDictionary.class]) {
-                                if ([[dict[@"data"] allKeys] containsObject:@"sid"]) {
+                                if ([[dict[@"data"] allKeys] containsObject:@"sid"] && [dict[@"result"]  isEqualToString:@"ok"]) {
                                     [HttpRequestServices sharedInstance].userSid = [dict[@"data"] objectForKey:@"sid"];
+                                }else{
+                                    NSLog(@"erroe:%@",[dict objectForKey:@"msg"]);
                                 }
                             }
                         }
@@ -130,7 +132,7 @@
         {
             //check测试
             NSDictionary *params = @{@"cmd":@"portal.session.check",
-                                     @"sid":@"eeee"};
+                                     @"sid":@"dee"};
             [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
                 
             } faile:^(NSError *error) {
