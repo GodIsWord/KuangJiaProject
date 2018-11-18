@@ -257,6 +257,20 @@
         
     }];
     
+    UIButton *backBtn = [[UIButton alloc]init];
+    backBtn.titleLabel.font = UIFontBoldMake(14);
+    [backBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [backBtn setTitle:@"关闭" forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(backBtnDidClicked) forControlEvents:UIControlEventTouchUpInside];
+    [self.subView addSubview:backBtn];
+    [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.subView.mas_bottom).offset(-20-BOTTOM_MARGIN);
+        make.right.equalTo(self.subView).offset(-20);
+        make.width.mas_equalTo(44);
+        make.height.mas_equalTo(44);
+        
+    }];
+  
     
 }
 
@@ -332,10 +346,10 @@
     if (range.location >= 20) {
         return NO;
     }
-    
-    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:ALPHANUM] invertedSet];
-    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
-    return [string isEqualToString:filtered];
+    return YES;
+//    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:ALPHANUM] invertedSet];
+//    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+//    return [string isEqualToString:filtered];
     
 }
 
@@ -388,13 +402,16 @@
     
 }
 
-//- (UIViewController *)viewController {
-//    id responder = self.nextResponder;
-//    while (![responder isKindOfClass:[UIViewController class]]) {
-//        responder = [responder nextResponder];
-//    }
-//    return (UIViewController *)responder;
-//}
+-(void)backBtnDidClicked{
+    [self.viewController dismissViewControllerAnimated:YES completion:nil];
+}
+- (UIViewController *)viewController {
+    id responder = self.nextResponder;
+    while (![responder isKindOfClass:[UIViewController class]]) {
+        responder = [responder nextResponder];
+    }
+    return (UIViewController *)responder;
+}
 
 #pragma mark -- KJCountryTableViewControllerDelegate
 -(void)searchCountry:(NSString *)country{

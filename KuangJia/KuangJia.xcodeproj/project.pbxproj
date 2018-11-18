@@ -38,6 +38,8 @@
 		CA6B04E6218BB88E005AC311 /* UIColor+KJHEX.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6B04E5218BB88E005AC311 /* UIColor+KJHEX.m */; };
 		CA6B04ED218BFFED005AC311 /* country.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04EB218BFFED005AC311 /* country.png */; };
 		CA6B04EE218BFFED005AC311 /* country_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6B04EC218BFFED005AC311 /* country_gray.png */; };
+		CAD39D7A219FD8D200CBA6E0 /* KJSetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD39D79219FD8D200CBA6E0 /* KJSetPwdViewController.m */; };
+		CAD39D7D21A1654000CBA6E0 /* KJLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD39D7C21A1654000CBA6E0 /* KJLoginModel.m */; };
 		E62A39C5217EB988005DC986 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C4217EB988005DC986 /* AppDelegate.m */; };
 		E62A39C8217EB988005DC986 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E62A39C7217EB988005DC986 /* ViewController.m */; };
 		E62A39CB217EB988005DC986 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62A39C9217EB988005DC986 /* Main.storyboard */; };
@@ -148,6 +150,10 @@
 		CA6B04E5218BB88E005AC311 /* UIColor+KJHEX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KJHEX.m"; sourceTree = "<group>"; };
 		CA6B04EB218BFFED005AC311 /* country.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = country.png; sourceTree = "<group>"; };
 		CA6B04EC218BFFED005AC311 /* country_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = country_gray.png; sourceTree = "<group>"; };
+		CAD39D78219FD8D200CBA6E0 /* KJSetPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJSetPwdViewController.h; sourceTree = "<group>"; };
+		CAD39D79219FD8D200CBA6E0 /* KJSetPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJSetPwdViewController.m; sourceTree = "<group>"; };
+		CAD39D7B21A1654000CBA6E0 /* KJLoginModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJLoginModel.h; sourceTree = "<group>"; };
+		CAD39D7C21A1654000CBA6E0 /* KJLoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KJLoginModel.m; sourceTree = "<group>"; };
 		E62A39C0217EB988005DC986 /* KuangJia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuangJia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62A39C3217EB988005DC986 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E62A39C4217EB988005DC986 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -341,6 +347,8 @@
 				CA6B04B4218A6514005AC311 /* KJCountryTableViewController.m */,
 				CA6B04C8218AD553005AC311 /* KJResultDisplayController.h */,
 				CA6B04C9218AD553005AC311 /* KJResultDisplayController.m */,
+				CAD39D7B21A1654000CBA6E0 /* KJLoginModel.h */,
+				CAD39D7C21A1654000CBA6E0 /* KJLoginModel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -368,6 +376,15 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		CAD39D77219FD89B00CBA6E0 /* SetPwd */ = {
+			isa = PBXGroup;
+			children = (
+				CAD39D78219FD8D200CBA6E0 /* KJSetPwdViewController.h */,
+				CAD39D79219FD8D200CBA6E0 /* KJSetPwdViewController.m */,
+			);
+			path = SetPwd;
+			sourceTree = "<group>";
+		};
 		E62A39B7217EB988005DC986 = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +406,7 @@
 		E62A39C2217EB988005DC986 /* KuangJia */ = {
 			isa = PBXGroup;
 			children = (
+				CAD39D77219FD89B00CBA6E0 /* SetPwd */,
 				E662D2E12197F1A000A6B9E9 /* Resource */,
 				8534BC7F218F1BA700A0EC4E /* WrapperViewController */,
 				E662D2C9218EE2C000A6B9E9 /* LJContactManager */,
@@ -779,8 +797,10 @@
 				E662D23A218B3D8C00A6B9E9 /* IMY_NJKWebViewProgress.m in Sources */,
 				E62A39C5217EB988005DC986 /* AppDelegate.m in Sources */,
 				E662D25A218B3DB200A6B9E9 /* YDCamoraViewController.m in Sources */,
+				CAD39D7A219FD8D200CBA6E0 /* KJSetPwdViewController.m in Sources */,
 				CA6B04BE218A6514005AC311 /* KJCountryTableViewController.m in Sources */,
 				E662D273218B3DBF00A6B9E9 /* YDPhotoAlbumManager.m in Sources */,
+				CAD39D7D21A1654000CBA6E0 /* KJLoginModel.m in Sources */,
 				E662D23D218B3D8C00A6B9E9 /* YDScanWebViewController.m in Sources */,
 				8534BC90218F38FE00A0EC4E /* JSBCallContactPlugin.m in Sources */,
 				E662D274218B3DBF00A6B9E9 /* YDPhotoGroupModel.m in Sources */,
