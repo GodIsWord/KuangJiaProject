@@ -180,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KuangJia/Login/View/KJLoginManage.m"
-            timestampString = "564316760.770511"
+            timestampString = "564317103.906337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "+checkWithUser"
             landmarkType = "7">
          </BreakpointContent>
