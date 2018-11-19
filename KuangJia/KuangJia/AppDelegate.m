@@ -14,6 +14,8 @@
 
 #import "HomeSecriteViewController.h"
 #import "KJLoginViewController.h"
+
+#import  "KJLoginManage.h"
 @interface AppDelegate ()
 
 @end
@@ -76,10 +78,13 @@
     forth.tabBarItem.imageInsets = UIEdgeInsetsMake(fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2), fabs((forth.tabBarItem.image.size.height-20)/2));
   
     tabBarController.viewControllers = @[first,second,third,naviForth];
+        [NSTimer scheduledTimerWithTimeInterval:60*5.0 target:self selector:@selector(checkWithUser) userInfo:nil repeats:YES];
 
     return YES;
 }
-
+-(void)checkWithUser{
+    [KJLoginManage checkWithUser];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
