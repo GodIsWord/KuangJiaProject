@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface KJLoginManage : NSObject
+
 // 登录
 +(void)loginWithUserName:(NSString *)userName
                 password:(NSString *)password
@@ -25,4 +26,6 @@
 +(void)exitsuccess:(void((^)(NSDictionary *result)))success
                     fail:(void((^)(NSError *error)))fail;
 
+
++(void)checkWithUser;
 @end

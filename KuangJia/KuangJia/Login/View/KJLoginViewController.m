@@ -30,9 +30,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initSubbView];
+    [NSTimer scheduledTimerWithTimeInterval:60*5.0 target:self selector:@selector(checkWithUser) userInfo:nil repeats:YES];
+//    [[NSRunLoop currentRunLoop] run];
 }
 
-
+-(void)checkWithUser{
+    [KJLoginManage checkWithUser];
+}
 - (void)initSubbView{
     
     self.headView = [[KJLoginView alloc] init];

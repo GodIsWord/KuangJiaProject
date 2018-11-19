@@ -16,6 +16,17 @@
 @end
 @implementation KJLoginManage
 
+//+ (instancetype)sharedInstance
+//{
+//    static id shared_instance = nil;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        shared_instance = [[self alloc] init];
+//    
+//    });
+//    return shared_instance;
+//}
+
 +(void)loginWithUserName:(NSString *)userName password:(NSString *)password  success:(void((^)(NSDictionary *result)))success fail:(void((^)(NSError *error)))fail{
 //
 //NSDictionary *params = @{@"cmd":@"portal.session.create",
@@ -62,12 +73,19 @@
                   success:(void((^)(NSDictionary *result)))success
                      fail:(void((^)(NSError *error)))fail{
     
+//    NSDictionary *params = @{@"cmd":@"org.user.create",
+//                             @"departmentId":@"43127819-0cbb-472b-a095-0d4c253d3722",
+//                             @"uid":userName?:@"",
+//                             @"userName":userName?:@"",
+//                             @"roleId":@"b5e2b9fb-bb86-4bb1-a549-5e75a575ebf3",
+//                             @"password":password?:@""};
+    
     NSDictionary *params = @{@"cmd":@"org.user.create",
                              @"departmentId":@"43127819-0cbb-472b-a095-0d4c253d3722",
-                             @"uid":userName?:@"",
-                             @"userName":userName?:@"",
-                             @"roleId":@"b5e2b9fb-bb86-4bb1-a549-5e75a575ebf3",
-                             @"password":password?:@""};
+                             @"uid":@"18519117591",
+                             @"userName":@"恍惚呃呃",
+                             @"roleId":@"893a7f46-3930-43bf-a9e5-18a5a7a3703e",
+                             @"password":@"test1"};
     [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
         // 注册成功
         if (success) {
@@ -104,8 +122,9 @@
     }];
     
 }
--(void)checkWithUser {
++(void)checkWithUser {
     //check测试 每隔5分钟
+    NSLog(@"打印");
     NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
     
     NSString *sid = [sidDefaults valueForKey:@"sid"];
