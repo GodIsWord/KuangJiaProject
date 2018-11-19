@@ -159,9 +159,9 @@
             //注册
             NSDictionary *params = @{@"cmd":@"org.user.create",
                                      @"departmentId":@"43127819-0cbb-472b-a095-0d4c253d3722",
-                                     @"uid":@"1889287",
+                                     @"uid":@"18519117591",
                                      @"userName":@"恍惚呃呃",
-                                     @"roleId":@"b5e2b9fb-bb86-4bb1-a549-5e75a575ebf3",
+                                     @"roleId":@"893a7f46-3930-43bf-a9e5-18a5a7a3703e",
                                      @"password":@"test1"};
             [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
                 
