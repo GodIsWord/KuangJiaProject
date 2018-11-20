@@ -104,13 +104,24 @@
     
     [KJLoginManage registWithUserName:self.userName password:self.pwdTextField.text success:^(NSDictionary *result) {
         
-        // 注册成功
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                        message:@"注册成功"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"注册成功"
+                                                                                 message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        
+        
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定"
+                                                           style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                               [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                                                               
+                                                           }];
+        
+        
+        
+        [alertController addAction:okAction];
+        
+        [self.navigationController presentViewController:alertController animated:YES completion:nil];
+
+        
     } fail:^(NSError *error) {
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
