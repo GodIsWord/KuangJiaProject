@@ -91,6 +91,10 @@
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ddd"];
     cell.textLabel.text = self.dataSource[indexPath.row];
+    
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(20, 43.5, self.view.bounds.size.width, 0.5)];
+    line.backgroundColor = [UIColor lightGrayColor];
+    [cell addSubview:line];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

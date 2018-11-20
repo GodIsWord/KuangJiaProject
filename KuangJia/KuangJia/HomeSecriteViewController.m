@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"个人信息";
-    self.dataSource = @[@"通讯录",@"短信发送",@"拨打电话",@"调用相机",@"打开相册",@"二维码 条形码扫描",@"登陆测试",@"check会话信息",@"close会话",@"注册",@"重置密码"];
+    self.dataSource = @[@"通讯录",@"短信发送",@"拨打电话",@"调用相机",@"打开相册",@"二维码 条形码扫描"];//,@"登陆测试",@"check会话信息",@"close会话",@"注册",@"重置密码"
     [self createTableView];
 }
 
