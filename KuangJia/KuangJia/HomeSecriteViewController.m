@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"个人信息";
-    self.dataSource = @[@"通讯录",@"短信发送",@"拨打电话",@"调用相机",@"打开相册",@"二维码 条形码扫描",@"登陆测试",@"check会话信息",@"close会话",@"注册"];
+    self.dataSource = @[@"通讯录",@"短信发送",@"拨打电话",@"调用相机",@"打开相册",@"二维码 条形码扫描",@"登陆测试",@"check会话信息",@"close会话",@"注册",@"重置密码"];
     [self createTableView];
 }
 
@@ -159,10 +159,25 @@
             //注册
             NSDictionary *params = @{@"cmd":@"org.user.create",
                                      @"departmentId":@"43127819-0cbb-472b-a095-0d4c253d3722",
-                                     @"uid":@"18519117591",
+                                     @"uid":@"18519227591",
                                      @"userName":@"恍惚呃呃",
                                      @"roleId":@"893a7f46-3930-43bf-a9e5-18a5a7a3703e",
                                      @"password":@"test1"};
+            [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
+                
+            } faile:^(NSError *error) {
+                
+            }];
+        }
+            break;
+        case 10:
+        {
+            //重置密码
+            NSDictionary *params = @{@"cmd":@"org.user.pwd.update",
+                                     @"uid":@"18519227591",
+                                     @"oldPassword":@"123456",
+                                     @"newPassword":@"123456",
+                                     };
             [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
                 
             } faile:^(NSError *error) {
