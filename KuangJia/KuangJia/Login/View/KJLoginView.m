@@ -9,7 +9,6 @@
 #define ALPHANUM @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 #import "XBMacroDefinition.h"
 #import "Masonry.h"
-#import "KJForgetViewController.h"
 #import "KJRegisterViewController.h"
 #import "KJCountryTableViewController.h"
 
@@ -229,33 +228,33 @@
     }];
     
     
-    self.forgetButton = [[UIButton alloc]init];
-    self.forgetButton.titleLabel.font = UIFontBoldMake(14);
-    [self.forgetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.forgetButton setTitle:@"忘记密码" forState:UIControlStateNormal];
-    [self.forgetButton addTarget:self action:@selector(forgetButtonDidClicked) forControlEvents:UIControlEventTouchUpInside];
-    [self.subView addSubview:self.forgetButton];
-    [self.forgetButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.top.equalTo(self.loginButton.mas_bottom).offset(10);
-        make.left.equalTo(self.loginButton.mas_left);
-        
-    }];
+//    self.forgetButton = [[UIButton alloc]init];
+//    self.forgetButton.titleLabel.font = UIFontBoldMake(14);
+//    [self.forgetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [self.forgetButton setTitle:@"忘记密码" forState:UIControlStateNormal];
+//    [self.forgetButton addTarget:self action:@selector(forgetButtonDidClicked) forControlEvents:UIControlEventTouchUpInside];
+//    [self.subView addSubview:self.forgetButton];
+//    [self.forgetButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.top.equalTo(self.loginButton.mas_bottom).offset(10);
+//        make.left.equalTo(self.loginButton.mas_left);
+//
+//    }];
     
     
-    UIButton *moreBtn = [[UIButton alloc]init];
-    moreBtn.titleLabel.font = UIFontBoldMake(14);
-    [moreBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [moreBtn setTitle:@"更多" forState:UIControlStateNormal];
-    [moreBtn addTarget:self action:@selector(moreButtonDidClicked) forControlEvents:UIControlEventTouchUpInside];
-    [self.subView addSubview:moreBtn];
-    [moreBtn  mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.subView.mas_bottom).offset(-20-BOTTOM_MARGIN);
-        make.left.equalTo(self.subView).offset(20);
-        make.width.mas_equalTo(44);
-        make.height.mas_equalTo(44);
-        
-    }];
+//    UIButton *moreBtn = [[UIButton alloc]init];
+//    moreBtn.titleLabel.font = UIFontBoldMake(14);
+//    [moreBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [moreBtn setTitle:@"更多" forState:UIControlStateNormal];
+//    [moreBtn addTarget:self action:@selector(moreButtonDidClicked) forControlEvents:UIControlEventTouchUpInside];
+//    [self.subView addSubview:moreBtn];
+//    [moreBtn  mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.bottom.equalTo(self.subView.mas_bottom).offset(-20-BOTTOM_MARGIN);
+//        make.left.equalTo(self.subView).offset(20);
+//        make.width.mas_equalTo(44);
+//        make.height.mas_equalTo(44);
+//
+//    }];
     
     UIButton *backBtn = [[UIButton alloc]init];
     backBtn.titleLabel.font = UIFontBoldMake(14);
@@ -370,13 +369,13 @@
     }
     
 }
--(void)forgetButtonDidClicked{
-    if ([self.delegate respondsToSelector:@selector(forget)]) {
-        [self.delegate forget];
-        
-    }
-    
-}
+//-(void)forgetButtonDidClicked{
+//    if ([self.delegate respondsToSelector:@selector(forget)]) {
+//        [self.delegate forget];
+//
+//    }
+//
+//}
 -(void)registButtonDidClicked{
     if ([self.delegate respondsToSelector:@selector(regist)]) {
         [self.delegate regist];
@@ -393,14 +392,14 @@
 }
 
 
--(void)moreButtonDidClicked{
-    
-    if ([self.delegate respondsToSelector:@selector(more)]) {
-        [self.delegate more];
-        
-    }
-    
-}
+//-(void)moreButtonDidClicked{
+//    
+//    if ([self.delegate respondsToSelector:@selector(more)]) {
+//        [self.delegate more];
+//        
+//    }
+//    
+//}
 
 -(void)backBtnDidClicked{
     [self.viewController dismissViewControllerAnimated:YES completion:nil];

@@ -12,7 +12,7 @@
 - (void)forget;
 - (void)login;
 - (void)regist;
-- (void)more;
+//- (void)more;
 @end
 
 @interface KJLoginView : UIView

@@ -11,7 +11,6 @@
 #import "Masonry.h"
 #import "KJRegisterViewController.h"
 #import "KJCountryTableViewController.h"
-#import "KJForgetViewController.h"
 #import "KJRegisterViewController.h"
 #import "KJLoginManage.h"
 #import "KJLoginModel.h"
@@ -30,8 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initSubbView];
-//    [NSTimer scheduledTimerWithTimeInterval:60*5.0 target:self selector:@selector(checkWithUser) userInfo:nil repeats:YES];
-//    [[NSRunLoop currentRunLoop] run];
+    //    [NSTimer scheduledTimerWithTimeInterval:60*5.0 target:self selector:@selector(checkWithUser) userInfo:nil repeats:YES];
+    //    [[NSRunLoop currentRunLoop] run];
 }
 
 
@@ -103,64 +102,64 @@
                                               otherButtonTitles:nil, nil];
         [alert show];
     }];
-  
+    
 }
 -(void)regist{
     KJRegisterViewController *regist = [[KJRegisterViewController alloc]init];
     UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:regist];
     [self.navigationController presentViewController:na animated:YES completion:nil];
 }
--(void)forget{
-    KJForgetViewController *forget = [[KJForgetViewController alloc]init];
-    UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:forget];
-    [self.navigationController presentViewController:na animated:YES completion:nil];
-}
+//-(void)forget{
+//    KJForgetViewController *forget = [[KJForgetViewController alloc]init];
+//    UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:forget];
+//    [self.navigationController presentViewController:na animated:YES completion:nil];
+//}
 -(void)country{
     KJCountryTableViewController *country = [[KJCountryTableViewController alloc]init];
     country.delegate = self.headView;
     UINavigationController *na = [[UINavigationController alloc] initWithRootViewController:country];
     [self.navigationController presentViewController:na animated:YES completion:nil];
 }
-
--(void)more{
-    //创建AlertController对象 preferredStyle可以设置是AlertView样式或者ActionSheet样式
-    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"其他账号登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    
-    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-   
-        [KJLoginManage exitsuccess:^(NSDictionary *result) {
-            
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                            message:@"注销成功"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"确定"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
-        } fail:^(NSError *error) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                            message:@"注销失败"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"确定"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
-            
-        }];
-        
-    }];
-    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-    }];
-    //添加按钮
-    [alertC addAction:action1];
-    [alertC addAction:action2];
-    [alertC addAction:action3];
-    //显示
-    [self.navigationController presentViewController:alertC animated:YES completion:nil];
-}
+//
+//-(void)more{
+//    //创建AlertController对象 preferredStyle可以设置是AlertView样式或者ActionSheet样式
+//    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+//
+//    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"其他账号登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//
+//    }];
+//
+//    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//
+//        [KJLoginManage exitsuccess:^(NSDictionary *result) {
+//
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
+//                                                            message:@"注销成功"
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"确定"
+//                                                  otherButtonTitles:nil, nil];
+//            [alert show];
+//        } fail:^(NSError *error) {
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
+//                                                            message:@"注销失败"
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:@"确定"
+//                                                  otherButtonTitles:nil, nil];
+//            [alert show];
+//
+//        }];
+//
+//    }];
+//    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//    }];
+//    //添加按钮
+//    [alertC addAction:action1];
+//    [alertC addAction:action2];
+//    [alertC addAction:action3];
+//    //显示
+//    [self.navigationController presentViewController:alertC animated:YES completion:nil];
+//}
 - (UIStatusBarStyle)preferredStatusBarStyle {
     
     return UIStatusBarStyleLightContent; //白色

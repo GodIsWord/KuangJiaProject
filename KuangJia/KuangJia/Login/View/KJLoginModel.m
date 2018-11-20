@@ -9,5 +9,21 @@
 #import "KJLoginModel.h"
 
 @implementation KJLoginModel
+@synthesize uid;
+@synthesize sid;
+
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:self.sid forKey:@"sid"];
+    [aCoder encodeObject:self.uid forKey:@"uid"];
+ 
+}
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if (self =[super init]) {
+        self.sid = [aDecoder decodeObjectForKey:@"sid"];
+        self.uid = [aDecoder decodeObjectForKey:@"uid"];
+
+    }
+    return self;
+}
 
 @end

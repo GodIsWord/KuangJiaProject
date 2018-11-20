@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KJLoginModel : NSObject
-@property (copy, nonatomic) NSString *uid;//在途金额
-@property (copy, nonatomic) NSString *sid;//总余额
+@interface KJLoginModel : NSObject<NSCoding>{
+    NSString *uid;
+    NSString *sid;
+
+}
+
+@property (copy, nonatomic) NSString *uid;//一个合法的AWS登录账户名
+@property (copy, nonatomic) NSString *sid;//sid是登录之后返回的ID
 
 @end

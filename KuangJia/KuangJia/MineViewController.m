@@ -12,6 +12,8 @@
 
 #import "KJLoginManage.h"
 
+#import "KJResetPwdViewController.h"
+#import "KJUserInfoContext.h"
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong) UITableView *tableView;
@@ -36,8 +38,8 @@
     [self reloadView];
 }
 -(void) reloadView{
-    NSString *sid = [[NSUserDefaults standardUserDefaults] objectForKey:@"sid"];
-    if (sid.length<=0) {
+    [KJUserInfoContext sharedUserInfoContext].userInfo = [KJLoginManage GetNSUserDefaults];
+    if ([KJUserInfoContext sharedUserInfoContext].userInfo.sid.length<=0) {
         self.dataSource = @[@"功能演示"];
     }else{
         self.dataSource = @[@"功能演示",@"修改密码"];
@@ -105,6 +107,8 @@
         case 1:
         {
             
+            KJResetPwdViewController *reset = [[KJResetPwdViewController alloc] init];
+            [self.navigationController pushViewController:reset animated:YES];
         }
             break;
             

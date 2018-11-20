@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "KJLoginModel.h"
 @interface KJLoginManage : NSObject
 
++(void)SetNSUserDefaults:(KJLoginModel *)userInfo;
+
++(KJLoginModel *)GetNSUserDefaults;
 // 登录
 +(void)loginWithUserName:(NSString *)userName
                 password:(NSString *)password
@@ -21,6 +24,11 @@
                 password:(NSString *)password
                  success:(void((^)(NSDictionary *result)))success
                     fail:(void((^)(NSError *error)))fail;
+// 修改密码
++(void)resetWithOldpwd:(NSString *)oldpwd
+                 newpwd:(NSString *)newpwd
+                  success:(void((^)(NSDictionary *result)))success
+                     fail:(void((^)(NSError *error)))fail;
 
 // 注销
 +(void)exitsuccess:(void((^)(NSDictionary *result)))success

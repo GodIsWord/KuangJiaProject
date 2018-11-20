@@ -8,7 +8,7 @@
 
 #import "KJLoginManage.h"
 #import "HttpRequestServices.h"
-
+#import "KJUserInfoContext.h"
 
 @interface KJLoginManage()
 @property (nonatomic, strong)dispatch_source_t time;
@@ -16,16 +16,20 @@
 @end
 @implementation KJLoginManage
 
-//+ (instancetype)sharedInstance
-//{
-//    static id shared_instance = nil;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        shared_instance = [[self alloc] init];
-//    
-//    });
-//    return shared_instance;
-//}
+//存储单例Models(UserInfo)到NSUserDefaults
++(void)SetNSUserDefaults:(KJLoginModel *)userInfo{
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:userInfo];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:data forKey:@"user"];
+    [defaults synchronize];
+}
+//读取NSUserDefaults存储内容return到单例Modesl(UserInfo)中
++(KJLoginModel *)GetNSUserDefaults{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [defaults objectForKey:@"user"];
+    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+}
+
 
 +(void)loginWithUserName:(NSString *)userName password:(NSString *)password  success:(void((^)(NSDictionary *result)))success fail:(void((^)(NSError *error)))fail{
     
@@ -33,7 +37,7 @@
                              @"uid":userName,
                              @"pwd":password};
     [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
-
+        
         NSDictionary *responseObject = respons;
         if ([responseObject.allKeys containsObject:@"data"]) {
             if ([responseObject[@"data"] isKindOfClass:NSString.class]) {
@@ -43,12 +47,17 @@
                     if ([dict[@"data"] isKindOfClass:NSDictionary.class] && [[dict[@"data"] allKeys] containsObject:@"sid"] && [dict[@"result"]  isEqualToString:@"ok"]) {
                         // 记录本地
                         NSString *sid = [dict[@"data"] objectForKey:@"sid"];
+                        NSString *uid = [dict[@"data"] objectForKey:@"uid"];
+                        
                         [HttpRequestServices sharedInstance].userSid = sid;
-                        if (sid.length>0) {
-                            NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
-                            [sidDefaults setValue:sid forKey:@"sid"];
-                            [sidDefaults synchronize];
-                        }
+                        
+                        //存储在单例中
+                        KJLoginModel *user = [KJUserInfoContext sharedUserInfoContext].userInfo;
+                        user.sid = sid;
+                        user.uid = uid;
+                        
+                        [KJLoginManage SetNSUserDefaults:user];
+                        
                         
                         if (success) {
                             success(respons);
@@ -84,11 +93,12 @@
                  password:(NSString *)password
                   success:(void((^)(NSDictionary *result)))success
                      fail:(void((^)(NSError *error)))fail{
-    
+    //读取用户状态和配置信息到单例中
+    [KJUserInfoContext sharedUserInfoContext].userInfo = [KJLoginManage GetNSUserDefaults];
     NSDictionary *params = @{@"cmd":@"org.user.create",
                              @"departmentId":@"43127819-0cbb-472b-a095-0d4c253d3722",
-                             @"uid":userName?:@"",
-                              @"userName":userName?:@"",
+                             @"uid": [KJUserInfoContext sharedUserInfoContext].userInfo.uid?:@"",
+                             @"userName":userName?:@"",
                              @"roleId":@"893a7f46-3930-43bf-a9e5-18a5a7a3703e",
                              @"password":password?:@""};
     [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
@@ -103,18 +113,32 @@
     }];
 }
 
-
++(void)resetWithOldpwd:(NSString *)oldpwd
+                 newpwd:(NSString *)newpwd
+                success:(void((^)(NSDictionary *result)))success
+                   fail:(void((^)(NSError *error)))fail{
+    [KJUserInfoContext sharedUserInfoContext].userInfo = [KJLoginManage GetNSUserDefaults];
+    NSDictionary *params = @{@"cmd":@"org.user.pwd.update",
+                             @"uid":[KJUserInfoContext sharedUserInfoContext].userInfo.uid?:@"",
+                             @"oldPassword":oldpwd?:@"",
+                             @"newPassword":newpwd?:@""};
+    
+    [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
+        if (success) {
+            success(respons);
+        }
+    } faile:^(NSError *error) {
+        if (fail) {
+            fail(error);
+        }
+    }];
+}
 // 退出登录
 +(void)exitsuccess:(void ((^)(NSDictionary *)))success fail:(void ((^)(NSError *)))fail{
-
-    
-    NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
-    
-    NSString *sid = [sidDefaults valueForKey:@"sid"];
-    
+    [KJUserInfoContext sharedUserInfoContext].userInfo = [KJLoginManage GetNSUserDefaults];
     //注销 sid是登录之后返回的ID
     NSDictionary *params = @{@"cmd":@"portal.session.close",
-                             @"sid":sid?:@""};
+                             @"sid":  [KJUserInfoContext sharedUserInfoContext].userInfo.sid?:@""};
     [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
         
         if (success) {
@@ -130,11 +154,9 @@
 +(void)checkWithUser {
     //check测试 每隔5分钟
     NSLog(@"打印");
-    NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
-    
-    NSString *sid = [sidDefaults valueForKey:@"sid"];
+    [KJUserInfoContext sharedUserInfoContext].userInfo = [KJLoginManage GetNSUserDefaults];
     NSDictionary *params = @{@"cmd":@"portal.session.check",
-                             @"sid":sid?:@""};
+                             @"sid": [KJUserInfoContext sharedUserInfoContext].userInfo.sid?:@""};
     [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
         
     } faile:^(NSError *error) {

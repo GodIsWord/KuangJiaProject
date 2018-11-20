@@ -1,5 +1,5 @@
 //
-//  KJForgetViewController.h
+//  KJResetPwdViewController.h
 //  KuangJia
 //
 //  Created by xb on 2018/10/29.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KJForgetViewController : UIViewController
+@interface KJResetPwdViewController : UIViewController
 
 @end
