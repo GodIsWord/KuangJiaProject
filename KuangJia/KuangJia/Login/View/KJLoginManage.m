@@ -23,31 +23,40 @@
 //                         @"pwd":password?:@""};
     
     NSDictionary *params = @{@"cmd":@"portal.session.create",
-                             @"uid":@"admin",
-                             @"pwd":@"123"};
+                             @"uid":userName,
+                             @"pwd":password};
     [HttpRequestServices requestAppending:nil httpMethod:SZRequestMethodTypeGet withParameters:params success:^(NSDictionary *respons) {
-        
+
         NSDictionary *responseObject = respons;
         if ([responseObject.allKeys containsObject:@"data"]) {
             if ([responseObject[@"data"] isKindOfClass:NSString.class]) {
                 NSString *str = [responseObject objectForKey:@"data"];
                 NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[str dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
                 if ([dict.allKeys containsObject:@"data"]) {
-                    if ([dict[@"data"] isKindOfClass:NSDictionary.class]) {
-                        if ([[dict[@"data"] allKeys] containsObject:@"sid"]) {
-                            [HttpRequestServices sharedInstance].userSid = [dict[@"data"] objectForKey:@"sid"];
-                            NSDictionary *data = dict[@"data"];
-                            [[NSUserDefaults standardUserDefaults] setValue:data[@"sid"] forKey:@"sid"];
-                            [[NSUserDefaults standardUserDefaults] synchronize];
-                            
+                    if ([dict[@"data"] isKindOfClass:NSDictionary.class] && [[dict[@"data"] allKeys] containsObject:@"sid"] && [dict[@"result"]  isEqualToString:@"ok"]) {
+                        // 记录本地
+                        [HttpRequestServices sharedInstance].userSid = [dict[@"data"] objectForKey:@"sid"];
+                        if (success) {
+                            success(respons);
+                        }
+                        
+                    }else{
+                        NSLog(@"erroe:%@",[dict objectForKey:@"msg"]);
+                        
+                        NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:1022 userInfo:@{NSLocalizedDescriptionKey:dict[@"msg"]}];
+                        if (fail) {
+                            fail(error);
                         }
                     }
                 }
             }
+        }else{
+            NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:1022 userInfo:@{NSLocalizedDescriptionKey:@"登录失败"}];
+            if (fail) {
+                fail(error);
+            }
         }
-        if (success) {
-            success(respons);
-        }
+        
         
     } faile:^(NSError *error) {
         if (fail) {
