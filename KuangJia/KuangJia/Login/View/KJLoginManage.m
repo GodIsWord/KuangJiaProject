@@ -28,10 +28,6 @@
 //}
 
 +(void)loginWithUserName:(NSString *)userName password:(NSString *)password  success:(void((^)(NSDictionary *result)))success fail:(void((^)(NSError *error)))fail{
-//
-//NSDictionary *params = @{@"cmd":@"portal.session.create",
-//                         @"uid":userName?:@"",
-//                         @"pwd":password?:@""};
     
     NSDictionary *params = @{@"cmd":@"portal.session.create",
                              @"uid":userName,
