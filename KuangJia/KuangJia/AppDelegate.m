@@ -15,6 +15,8 @@
 #import "HomeSecriteViewController.h"
 #import "KJLoginViewController.h"
 
+#import "MineViewController.h"
+
 #import  "KJLoginManage.h"
 @interface AppDelegate ()
 
@@ -70,7 +72,7 @@
     third.tabBarItem.imageInsets = UIEdgeInsetsMake(fabs((thirdImage.size.height-20)/2), fabs((thirdImage.size.height-20)/2), fabs((thirdImage.size.height-20)/2), fabs((thirdImage.size.height-20)/2));
     
     
-    HomeSecriteViewController *forth = [[HomeSecriteViewController alloc] init];
+    MineViewController *forth = [[MineViewController alloc] init];
     UINavigationController *naviForth = [[UINavigationController alloc] initWithRootViewController:forth];
     forth.tabBarItem.title = @"我的";
     forth.tabBarItem.image = [UIImage imageNamed:@"tab_person_normal.png"];

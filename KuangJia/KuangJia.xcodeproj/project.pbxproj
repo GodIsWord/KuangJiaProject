@@ -89,6 +89,7 @@
 		E662D2F02197F1F700A6B9E9 /* tab_profit_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2EE2197F1F700A6B9E9 /* tab_profit_normal.png */; };
 		E662D2F12197F1F700A6B9E9 /* tab_profit_select.png in Resources */ = {isa = PBXBuildFile; fileRef = E662D2EF2197F1F700A6B9E9 /* tab_profit_select.png */; };
 		E662D2FA2198176E00A6B9E9 /* YDCoverLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = E662D2F82198176D00A6B9E9 /* YDCoverLocation.m */; };
+		E6A1703621A41FF300940F83 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A1703521A41FF300940F83 /* MineViewController.m */; };
 		E6C6D1EC219DB38C0026C0E5 /* HttpRequestServices.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6D1EB219DB38C0026C0E5 /* HttpRequestServices.m */; };
 /* End PBXBuildFile section */
 
@@ -237,6 +238,8 @@
 		E662D2EF2197F1F700A6B9E9 /* tab_profit_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_profit_select.png; sourceTree = "<group>"; };
 		E662D2F82198176D00A6B9E9 /* YDCoverLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDCoverLocation.m; sourceTree = "<group>"; };
 		E662D2F92198176E00A6B9E9 /* YDCoverLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDCoverLocation.h; sourceTree = "<group>"; };
+		E6A1703421A41FF300940F83 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		E6A1703521A41FF300940F83 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		E6C6D1EA219DB38C0026C0E5 /* HttpRequestServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestServices.h; sourceTree = "<group>"; };
 		E6C6D1EB219DB38C0026C0E5 /* HttpRequestServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequestServices.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -428,6 +431,8 @@
 				8534BC84218F265400A0EC4E /* TabBarController.m */,
 				E662D2C0218EDBCB00A6B9E9 /* HomeSecriteViewController.h */,
 				E662D2C1218EDBCB00A6B9E9 /* HomeSecriteViewController.m */,
+				E6A1703421A41FF300940F83 /* MineViewController.h */,
+				E6A1703521A41FF300940F83 /* MineViewController.m */,
 				8534BC86218F280100A0EC4E /* ProfileViewController.h */,
 				8534BC87218F280100A0EC4E /* ProfileViewController.m */,
 				8534BC89218F287700A0EC4E /* ProfileViewController.xib */,
@@ -766,6 +771,7 @@
 				E662D247218B3D9400A6B9E9 /* UIView+XBFrame.m in Sources */,
 				CA6B04A9218A6508005AC311 /* KJRegisterView.m in Sources */,
 				E662D2FA2198176E00A6B9E9 /* YDCoverLocation.m in Sources */,
+				E6A1703621A41FF300940F83 /* MineViewController.m in Sources */,
 				E662D23B218B3D8C00A6B9E9 /* IMYWebView.m in Sources */,
 				8534BC8D218F371B00A0EC4E /* JSBSendMessagePlugin.m in Sources */,
 				CA6B04BC218A6514005AC311 /* KJLoginView.m in Sources */,
