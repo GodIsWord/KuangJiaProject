@@ -42,7 +42,14 @@
                 if ([dict.allKeys containsObject:@"data"]) {
                     if ([dict[@"data"] isKindOfClass:NSDictionary.class] && [[dict[@"data"] allKeys] containsObject:@"sid"] && [dict[@"result"]  isEqualToString:@"ok"]) {
                         // 记录本地
-                        [HttpRequestServices sharedInstance].userSid = [dict[@"data"] objectForKey:@"sid"];
+                        NSString *sid = [dict[@"data"] objectForKey:@"sid"];
+                        [HttpRequestServices sharedInstance].userSid = sid;
+                        if (sid.length>0) {
+                            NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
+                            [sidDefaults setValue:sid forKey:@"sid"];
+                            [sidDefaults synchronize];
+                        }
+                        
                         if (success) {
                             success(respons);
                         }
