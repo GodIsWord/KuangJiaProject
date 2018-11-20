@@ -97,7 +97,7 @@
     } fail:^(NSError *error) {
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                        message:@"登录失败"
+                                                        message:error.localizedDescription
                                                        delegate:nil
                                               cancelButtonTitle:@"确定"
                                               otherButtonTitles:nil, nil];
