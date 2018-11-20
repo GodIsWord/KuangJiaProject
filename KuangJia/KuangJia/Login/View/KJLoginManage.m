@@ -47,14 +47,13 @@
                     if ([dict[@"data"] isKindOfClass:NSDictionary.class] && [[dict[@"data"] allKeys] containsObject:@"sid"] && [dict[@"result"]  isEqualToString:@"ok"]) {
                         // 记录本地
                         NSString *sid = [dict[@"data"] objectForKey:@"sid"];
-                        NSString *uid = [dict[@"data"] objectForKey:@"uid"];
                         
                         [HttpRequestServices sharedInstance].userSid = sid;
                         
                         //存储在单例中
                         KJLoginModel *user = [KJUserInfoContext sharedUserInfoContext].userInfo;
                         user.sid = sid;
-                        user.uid = uid;
+                        user.uid = userName;
                         
                         [KJLoginManage SetNSUserDefaults:user];
                         
@@ -97,7 +96,7 @@
     [KJUserInfoContext sharedUserInfoContext].userInfo = [KJLoginManage GetNSUserDefaults];
     NSDictionary *params = @{@"cmd":@"org.user.create",
                              @"departmentId":@"43127819-0cbb-472b-a095-0d4c253d3722",
-                             @"uid": [KJUserInfoContext sharedUserInfoContext].userInfo.uid?:@"",
+                             @"uid":userName?:@"",
                              @"userName":userName?:@"",
                              @"roleId":@"893a7f46-3930-43bf-a9e5-18a5a7a3703e",
                              @"password":password?:@""};

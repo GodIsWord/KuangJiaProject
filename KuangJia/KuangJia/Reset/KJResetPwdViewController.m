@@ -63,7 +63,6 @@
 }
 
 -(void)dissmiss{
-    
     [self.navigationController popViewControllerAnimated:YES];
     
 }
@@ -72,24 +71,37 @@
     
     if(self.headView.nowPwdTextField.text == self.headView.makesurePwdTextField.text){
         
-    
-    [KJLoginManage resetWithOldpwd:self.headView.oldPwdTextField.text newpwd:self.headView.nowPwdTextField.text success:^(NSDictionary *result) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                        message:@"修改密码成功"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
         
-    } fail:^(NSError *error) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                        message:@"修改密码失败"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-        
-    }];
+        [KJLoginManage resetWithOldpwd:self.headView.oldPwdTextField.text newpwd:self.headView.nowPwdTextField.text success:^(NSDictionary *result) {
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"登录成功"
+                                                                                     message:nil preferredStyle:UIAlertControllerStyleAlert];
+            
+            
+            
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定"
+                                                               style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                                   [self.navigationController popViewControllerAnimated:YES];
+                                                                   
+                                                                   
+                                                               }];
+            
+            
+            
+            [alertController addAction:okAction];
+            
+            [self.navigationController presentViewController:alertController animated:YES completion:nil];
+            
+            
+        } fail:^(NSError *error) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
+                                                            message:@"修改密码失败"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"确定"
+                                                  otherButtonTitles:nil, nil];
+            [alert show];
+            
+        }];
         
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
