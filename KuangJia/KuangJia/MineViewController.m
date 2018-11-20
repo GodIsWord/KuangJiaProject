@@ -26,15 +26,22 @@
     // Do any additional setup after loading the view.
     self.title = @"个人信息";
     
-    self.dataSource = @[@"功能演示",@"修改密码"];
+    
     [self createTableView];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self reloadView];
 }
 -(void) reloadView{
+    NSString *sid = [[NSUserDefaults standardUserDefaults] objectForKey:@"sid"];
+    if (sid.length<=0) {
+        self.dataSource = @[@"功能演示"];
+    }else{
+        self.dataSource = @[@"功能演示",@"修改密码"];
+    }
     [self.tableView reloadData];
 }
 -(void)createTableView

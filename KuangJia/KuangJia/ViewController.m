@@ -32,11 +32,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 1) {
-        KJLoginViewController *loginViewController = [[KJLoginViewController alloc]init];
-        UINavigationController *na = [[UINavigationController alloc]initWithRootViewController:loginViewController];
-        [self.navigationController presentViewController:na animated:YES completion:nil];
-    }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
