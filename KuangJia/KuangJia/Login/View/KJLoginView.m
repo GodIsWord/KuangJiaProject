@@ -12,6 +12,8 @@
 #import "KJRegisterViewController.h"
 #import "KJCountryTableViewController.h"
 
+#import "KJUserInfoContext.h"
+
 @interface KJLoginView () <UITextFieldDelegate,KJCountryTableViewControllerDelegate>
 
 @property(strong, nonatomic) UIImageView *iconImageView;
@@ -158,6 +160,11 @@
         make.height.mas_equalTo(49);
         
     }];
+    
+    KJLoginModel *userModel = [KJUserInfoContext sharedUserInfoContext].userInfo;
+    if (userModel.uid.length > 0) {
+        self.mobileTextField.text = userModel.uid;
+    }
     
     
     self.line1 = [[UIView alloc] init];

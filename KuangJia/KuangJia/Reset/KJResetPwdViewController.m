@@ -74,7 +74,7 @@
         
         [KJLoginManage resetWithOldpwd:self.headView.oldPwdTextField.text newpwd:self.headView.nowPwdTextField.text success:^(NSDictionary *result) {
             
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"登录成功"
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"修改成功"
                                                                                      message:nil preferredStyle:UIAlertControllerStyleAlert];
             
             
@@ -95,7 +95,7 @@
             
         } fail:^(NSError *error) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                            message:@"修改密码失败"
+                                                            message:error.localizedDescription
                                                            delegate:nil
                                                   cancelButtonTitle:@"确定"
                                                   otherButtonTitles:nil, nil];

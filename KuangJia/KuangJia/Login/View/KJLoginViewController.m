@@ -83,7 +83,12 @@
         
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定"
                                                            style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                                                               [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                                                               if (self.navigationController) {
+                                                                   [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                                                                   
+                                                               }else{
+                                                                   [self dismissViewControllerAnimated:YES completion:nil];
+                                                               }
                                                                
                                                            }];
         
@@ -91,7 +96,7 @@
         
         [alertController addAction:okAction];
         
-        [self.navigationController presentViewController:alertController animated:YES completion:nil];
+        [self presentViewController:alertController animated:YES completion:nil];
         
     } fail:^(NSError *error) {
         

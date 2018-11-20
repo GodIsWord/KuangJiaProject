@@ -14,6 +14,9 @@
 
 #import "KJResetPwdViewController.h"
 #import "KJUserInfoContext.h"
+
+#import "KJLoginViewController.h"
+
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong) UITableView *tableView;
@@ -38,8 +41,8 @@
     [self reloadView];
 }
 -(void) reloadView{
-    [KJUserInfoContext sharedUserInfoContext].userInfo = [KJLoginManage GetNSUserDefaults];
-    if ([KJUserInfoContext sharedUserInfoContext].userInfo.sid.length<=0) {
+    KJLoginModel *userModel = [KJUserInfoContext sharedUserInfoContext].userInfo;
+    if (!userModel.isLogIn) {
         self.dataSource = @[@"功能演示",@"登陆"];
     }else{
         self.dataSource = @[@"功能演示",@"修改密码"];
@@ -59,8 +62,7 @@
 -(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     KJLoginModel *userModel = [KJUserInfoContext sharedUserInfoContext].userInfo;
-    NSString *sid =userModel.sid;
-    if (sid.length>0) {
+    if (userModel.isLogIn) {
         return 60;
     }
     return 0;
@@ -68,8 +70,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     KJLoginModel *userModel = [KJUserInfoContext sharedUserInfoContext].userInfo;
-    NSString *sid =userModel.sid;
-    if (sid.length>0) {
+    if (userModel.isLogIn) {
         UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
         backView.backgroundColor = [UIColor whiteColor];
         backView.userInteractionEnabled = YES;
@@ -110,9 +111,15 @@
             break;
         case 1:
         {
+            KJLoginModel *userModel = [KJUserInfoContext sharedUserInfoContext].userInfo;
+            if (userModel.isLogIn) {
+                KJResetPwdViewController *reset = [[KJResetPwdViewController alloc] init];
+                [self.navigationController pushViewController:reset animated:YES];
+            }else{
+                KJLoginViewController *logIN = [[KJLoginViewController alloc] init];
+                [self.navigationController presentViewController:logIN animated:YES completion:nil];
+            }
             
-            KJResetPwdViewController *reset = [[KJResetPwdViewController alloc] init];
-            [self.navigationController pushViewController:reset animated:YES];
         }
             break;
             
@@ -123,29 +130,15 @@
 -(void)logOut{
     [KJLoginManage exitsuccess:^(NSDictionary *result) {
         if ([result[@"result"] isEqualToString:@"ok"]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                            message:@"注销成功"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"确定"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
-            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"sid"];
-            [self reloadView];
+            
         }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                            message:result[@"msg"]
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"确定"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
+            
         }
     } fail:^(NSError *error) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
-                                                        message:error.localizedDescription
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
+        
     }];
+    
+    [KJUserInfoContext sharedUserInfoContext].userInfo.sid = nil;
+    [self reloadView];
 }
 @end
