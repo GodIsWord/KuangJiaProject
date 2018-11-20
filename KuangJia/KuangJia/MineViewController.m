@@ -40,7 +40,7 @@
 -(void) reloadView{
     [KJUserInfoContext sharedUserInfoContext].userInfo = [KJLoginManage GetNSUserDefaults];
     if ([KJUserInfoContext sharedUserInfoContext].userInfo.sid.length<=0) {
-        self.dataSource = @[@"功能演示"];
+        self.dataSource = @[@"功能演示",@"登陆"];
     }else{
         self.dataSource = @[@"功能演示",@"修改密码"];
     }
@@ -58,8 +58,8 @@
 
 -(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *sid = [sidDefaults valueForKey:@"sid"];
+    KJLoginModel *userModel = [KJUserInfoContext sharedUserInfoContext].userInfo;
+    NSString *sid =userModel.sid;
     if (sid.length>0) {
         return 60;
     }
@@ -67,8 +67,8 @@
 }
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    NSUserDefaults *sidDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *sid = [sidDefaults valueForKey:@"sid"];
+    KJLoginModel *userModel = [KJUserInfoContext sharedUserInfoContext].userInfo;
+    NSString *sid =userModel.sid;
     if (sid.length>0) {
         UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
         backView.backgroundColor = [UIColor whiteColor];

@@ -25,5 +25,9 @@
     }
     return self;
 }
+-(BOOL)isLogIn
+{
+    return self.sid.length>0;
+}
 
 @end

@@ -17,4 +17,6 @@
 @property (copy, nonatomic) NSString *uid;//一个合法的AWS登录账户名
 @property (copy, nonatomic) NSString *sid;//sid是登录之后返回的ID
 
+@property (nonatomic, assign) BOOL isLogIn;
+
 @end
